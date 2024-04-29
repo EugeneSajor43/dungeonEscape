@@ -11,7 +11,7 @@ public abstract class Tile : MonoBehaviour {
     public BaseUnit OccupiedUnit;
     public bool Walkable => _isWalkable && OccupiedUnit == null;
 
-
+    private IEnumerator moveCoroutine;
     public virtual void Init(int x, int y)
     {
       
@@ -29,9 +29,30 @@ public abstract class Tile : MonoBehaviour {
         MenuManager.Instance.ShowTileInfo(null);
     }
 
-    void OnMouseDown() {
-        UnitManager.Instance.PlayerMove();
+     private IEnumerator MoveCoroutine()
+    {
+        while (GameManager.Instance.GameState != GameState.LostGame || GameManager.Instance.GameState != GameState.WonGame)
+        {
+            // Call PlayerMove() function here
+            UnitManager.Instance.PlayerMove();
+
+            // Wait for 100 milliseconds
+            yield return new WaitForSeconds(0.05f);
+        }
     }
+
+    void OnMouseDown()
+    {
+        moveCoroutine = MoveCoroutine();
+        StartCoroutine(moveCoroutine);
+    } 
+
+
+
+//    void OnMouseDown() {
+//       UnitManager.Instance.PlayerMove();
+//    }
+
 
     public void SetUnit(BaseUnit unit) {
         if (unit.OccupiedTile != null) unit.OccupiedTile.OccupiedUnit = null;
