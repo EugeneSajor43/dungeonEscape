@@ -111,4 +111,6 @@ MonoBehaviour:
   _renderer: {fileID: 1263168252513191948}
   _highlight: {fileID: 2145636249419821464}
   _isWalkable: 0
+  _isPortalSpawned: 0
+  _PortalColor: {r: 0.5943396, g: 0.07008721, b: 0.07008721, a: 0}
   OccupiedUnit: {fileID: 0}

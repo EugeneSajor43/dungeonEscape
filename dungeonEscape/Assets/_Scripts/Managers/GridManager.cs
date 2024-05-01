@@ -13,7 +13,7 @@ public class GridManager : MonoBehaviour {
 
     [SerializeField] private Transform _cam;
 
-    private Dictionary<Vector2, Tile> _tiles;
+    public Dictionary<Vector2, Tile> _tiles;
 
     void Awake() {
         Instance = this;
@@ -55,5 +55,24 @@ public class GridManager : MonoBehaviour {
     {
         if (_tiles.TryGetValue(pos, out var tile)) return tile;
         return null;
+    }
+
+    public bool IsTileInBounds(Vector2 pos)
+    {
+        return _tiles.ContainsKey(pos);
+    }
+
+    public void DestroyTiles()
+    {
+        for (int x = 0; x < _width; x++)
+        {
+            for (int y = 0; y < _height; y++)
+            {
+                //string tile_name = $"Tile {x} {y}";
+                Destroy(_tiles[new Vector2(x, y)]);
+                print(new Vector2(x, y));
+            }
+        }
+        _tiles.Clear();
     }
 }

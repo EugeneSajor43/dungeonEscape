@@ -9,15 +9,19 @@ public class GameManager : MonoBehaviour
     public GameState GameState;
     public static int heroTurn;
 
+    private IEnumerator moveCoroutine;
+
     void Awake()
     {
         Instance = this;
         heroTurn = 1;
     }
 
-    void Start()
+    public void Start()
     {
         ChangeState(GameState.GenerateGrid);
+        moveCoroutine = MoveCoroutine();
+        StartCoroutine(moveCoroutine);
     }
 
     public void ChangeState(GameState newState)
@@ -35,13 +39,13 @@ public class GameManager : MonoBehaviour
                 UnitManager.Instance.SpawnEnemies();
                 break;
             case GameState.HeroesTurn:
-                //UnitManager.Instance.PlayerMove();
+                UnitManager.Instance.PlayerMove();
                 break;
             case GameState.Heroes2Turn:
                 UnitManager.Instance.PlayerMove();
                 break;
             case GameState.Heroes3Turn:
-                UnitManager.Instance.PlayerMove();
+                //UnitManager.Instance.PlayerMove();
                 break;
             case GameState.EnemiesTurn:
                 UnitManager.Instance.EnemyMove();
@@ -58,6 +62,29 @@ public class GameManager : MonoBehaviour
                 throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
         }
     }
+
+
+    private IEnumerator MoveCoroutine()
+    {
+        while (true)
+        {
+            // Call PlayerMove() function here
+            UnitManager.Instance.PlayerMove();
+
+            // Wait for 50 milliseconds
+            yield return new WaitForSeconds(0.05f);
+        }
+    }
+
+    public void OnDestroy()
+    {
+        // Stop the coroutine when the object is destroyed
+        if (moveCoroutine != null)
+        {
+            StopCoroutine(moveCoroutine);
+        }
+    }
+
 }
 
 public enum GameState

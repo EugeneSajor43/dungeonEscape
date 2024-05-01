@@ -8,10 +8,13 @@ public abstract class Tile : MonoBehaviour {
     [SerializeField] private GameObject _highlight;
     [SerializeField] private bool _isWalkable;
 
+    [SerializeField] public bool _isPortalSpawned;
+    [SerializeField] private Color _PortalColor;
+
     public BaseUnit OccupiedUnit;
     public bool Walkable => _isWalkable && OccupiedUnit == null;
 
-    private IEnumerator moveCoroutine;
+    //private IEnumerator moveCoroutine;
     public virtual void Init(int x, int y)
     {
       
@@ -29,7 +32,7 @@ public abstract class Tile : MonoBehaviour {
         MenuManager.Instance.ShowTileInfo(null);
     }
 
-     private IEnumerator MoveCoroutine()
+/*      private IEnumerator MoveCoroutine()
     {
         while (GameManager.Instance.GameState != GameState.LostGame || GameManager.Instance.GameState != GameState.WonGame)
         {
@@ -45,13 +48,13 @@ public abstract class Tile : MonoBehaviour {
     {
         moveCoroutine = MoveCoroutine();
         StartCoroutine(moveCoroutine);
-    } 
+    }  */
 
 
 
-//    void OnMouseDown() {
-//       UnitManager.Instance.PlayerMove();
-//    }
+    void OnMouseDown() {
+       UnitManager.Instance.PlayerMove();
+    }
 
 
     public void SetUnit(BaseUnit unit) {
@@ -60,4 +63,14 @@ public abstract class Tile : MonoBehaviour {
         OccupiedUnit = unit;
         unit.OccupiedTile = this;
     }
+
+    public virtual void ColorPortal()
+    {
+
+        if (_isPortalSpawned == true)
+        {
+            _renderer.color = _PortalColor;
+        }
+    }
+
 }

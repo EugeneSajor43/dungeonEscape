@@ -72,6 +72,7 @@
     <Compile Include="Assets/_Scripts/Managers/GridManager.cs" />
     <Compile Include="Assets/_Scripts/Units/BaseUnit.cs" />
     <Compile Include="Assets/_Scripts/Tiles/GrassTile.cs" />
+    <Compile Include="Assets/_Scripts/Units/AgentController.cs" />
     <Compile Include="Assets/_Scripts/Units/Heroes/Hero2.cs" />
     <Compile Include="Assets/_Scripts/Managers/MenuManager.cs" />
     <Compile Include="Assets/_Scripts/Units/Heroes/Hero3.cs" />
@@ -525,6 +526,10 @@
       <HintPath>/Applications/Unity/Hub/Editor/2023.2.17f1/Unity.app/Contents/Managed/UnityEngine/UnityEditor.XRModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="System.IO.Abstractions">
+      <HintPath>/Users/esajor/Desktop/ml-agents/com.unity.ml-agents/Plugins/System.IO.Abstractions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.Collections.LowLevel.ILSupport">
       <HintPath>Library/PackageCache/com.unity.collections@1.2.4/Unity.Collections.LowLevel.ILSupport/Unity.Collections.LowLevel.ILSupport.dll</HintPath>
       <Private>False</Private>
@@ -533,8 +538,20 @@
       <HintPath>Library/PackageCache/com.unity.ext.nunit@2.0.5/net40/unity-custom/nunit.framework.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Google.Protobuf_Packed">
+      <HintPath>Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Plugins/Google.Protobuf_Packed.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>Library/PackageCache/com.unity.visualscripting@1.8.0/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Grpc.Core">
+      <HintPath>/Users/esajor/Desktop/ml-agents/com.unity.ml-agents/Plugins/ProtoBuffer/Grpc.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO.Abstractions.TestingHelpers">
+      <HintPath>/Users/esajor/Desktop/ml-agents/com.unity.ml-agents/Plugins/System.IO.Abstractions.TestingHelpers.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
@@ -1077,17 +1094,21 @@
   <ItemGroup>
     <ProjectReference Include="Unity.2D.Aseprite.Common.csproj" />
     <ProjectReference Include="Unity.2D.Animation.Runtime.csproj" />
+    <ProjectReference Include="Unity.ML-Agents.CommunicatorObjects.csproj" />
     <ProjectReference Include="Unity.Rider.Editor.csproj" />
+    <ProjectReference Include="Unity.Sentis.iOSBLAS.csproj" />
     <ProjectReference Include="Unity.2D.Tilemap.Extras.Editor.csproj" />
     <ProjectReference Include="PsdPlugin.csproj" />
     <ProjectReference Include="Unity.VisualScripting.Shared.Editor.csproj" />
     <ProjectReference Include="Unity.VisualScripting.Core.Editor.csproj" />
     <ProjectReference Include="Unity.2D.Common.Editor.csproj" />
+    <ProjectReference Include="Unity.Sentis.csproj" />
     <ProjectReference Include="Unity.2D.Common.Path.Editor.csproj" />
     <ProjectReference Include="Unity.VisualScripting.Flow.Editor.csproj" />
     <ProjectReference Include="Unity.2D.IK.Editor.csproj" />
     <ProjectReference Include="Unity.2D.IK.Runtime.csproj" />
     <ProjectReference Include="Unity.2D.SpriteShape.Runtime.csproj" />
+    <ProjectReference Include="Unity.Sentis.Editor.csproj" />
     <ProjectReference Include="Unity.Timeline.Editor.csproj" />
     <ProjectReference Include="Unity.2D.Tilemap.Extras.csproj" />
     <ProjectReference Include="Unity.2D.Common.Runtime.csproj" />
@@ -1095,20 +1116,24 @@
     <ProjectReference Include="Unity.VisualScripting.State.Editor.csproj" />
     <ProjectReference Include="Unity.Mathematics.csproj" />
     <ProjectReference Include="Unity.VisualScripting.SettingsProvider.Editor.csproj" />
+    <ProjectReference Include="Unity.Sentis.ONNX.csproj" />
     <ProjectReference Include="Unity.PlasticSCM.Editor.csproj" />
     <ProjectReference Include="Unity.2D.Aseprite.Editor.csproj" />
+    <ProjectReference Include="Unity.ML-Agents.csproj" />
     <ProjectReference Include="Unity.VisualScripting.State.csproj" />
-    <ProjectReference Include="Unity.2D.SpriteShape.Editor.csproj" />
+    <ProjectReference Include="Unity.ML-Agents.Editor.csproj" />
     <ProjectReference Include="Unity.Mathematics.Editor.csproj" />
+    <ProjectReference Include="Unity.2D.SpriteShape.Editor.csproj" />
     <ProjectReference Include="Unity.2D.Psdimporter.Editor.csproj" />
     <ProjectReference Include="Unity.InternalAPIEditorBridge.001.csproj" />
     <ProjectReference Include="Unity.2D.Animation.Editor.csproj" />
     <ProjectReference Include="Unity.Burst.Editor.csproj" />
     <ProjectReference Include="Unity.Collections.csproj" />
-    <ProjectReference Include="Unity.2D.PixelPerfect.csproj" />
     <ProjectReference Include="Unity.Burst.csproj" />
+    <ProjectReference Include="Unity.2D.PixelPerfect.csproj" />
     <ProjectReference Include="Unity.VisualStudio.Editor.csproj" />
     <ProjectReference Include="Unity.2D.PixelPerfect.Editor.csproj" />
+    <ProjectReference Include="Unity.Sentis.MacBLAS.csproj" />
     <ProjectReference Include="Unity.VisualScripting.Flow.csproj" />
     <ProjectReference Include="Unity.VisualScripting.Core.csproj" />
     <ProjectReference Include="Unity.InternalAPIEngineBridge.001.csproj" />

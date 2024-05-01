@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UnitManager : MonoBehaviour {
     public static UnitManager Instance;
@@ -25,7 +26,7 @@ public class UnitManager : MonoBehaviour {
     }
 
     public void SpawnHeroes() {
-        var heroes = _units.Where(u => u.Faction == Faction.Hero).OrderBy(o => Random.value);
+        var heroes = _units.Where(u => u.Faction == Faction.Hero); 
         int trackHero = 0;
 
         foreach(var hero in heroes) {
@@ -159,7 +160,7 @@ public class UnitManager : MonoBehaviour {
         } else {
             GameManager.Instance.ChangeState(GameState.EnemiesTurn);
         }
-
+    }
         //SelectedEnemy.OccupiedTile = this;
 
 
@@ -239,7 +240,7 @@ public class UnitManager : MonoBehaviour {
             
             }
         }*/
-    }
+    
 
     public void SpawnExit() {
         var random = new System.Random();
@@ -272,6 +273,8 @@ public class UnitManager : MonoBehaviour {
             Tile tile1 = GridManager.Instance.GetTileAtPosition(new Vector2(newX, newY));
             if (tile1.TileName != "Mountain") {
                 goodExit = true;
+                tile1._isPortalSpawned = true;
+                tile1.ColorPortal();
             }
 
         }
@@ -358,19 +361,38 @@ public class UnitManager : MonoBehaviour {
         if (SelectedHeroes[0] != null) {
             Destroy(SelectedHeroes[0].gameObject);
         } 
-        else if (SelectedHeroes[1] != null) {
+        if (SelectedHeroes[1] != null) {
             Destroy(SelectedHeroes[1].gameObject);
         } 
-        else if (SelectedHeroes[2] != null) {
+        if (SelectedHeroes[2] != null) {
             Destroy(SelectedHeroes[2].gameObject);
-        } 
-
+        }  
         if (SelectedEnemy != null) {
             Destroy(SelectedEnemy.gameObject);        
-        } 
+        }   
+
+    
         EscapeExit = new Vector3(-1f, -1f, -1f);
         EscapeCount = 0;
         DeadHeroes = 0;
         CanEscape = false;
+        GameManager.Instance.OnDestroy();
+        
+        
+        GridManager.Instance.DestroyTiles();
+        Destroy(GridManager.Instance);
+        SceneManager.LoadScene("Scenes/SampleScene");
+
+
+    }
+
+    public void Escaped()
+    {
+            Destroy(SelectedHeroes[2].gameObject);
+            print("Escaped");
+            EscapeCount += 1;
+            if (EscapeCount + DeadHeroes == 3) {
+                GameManager.Instance.ChangeState(GameState.Heroes2Turn);
+            }
     }
 }
