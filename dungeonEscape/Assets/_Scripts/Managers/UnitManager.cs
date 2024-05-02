@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UnitManager : MonoBehaviour {
     public static UnitManager Instance;
@@ -372,5 +373,6 @@ public class UnitManager : MonoBehaviour {
         EscapeCount = 0;
         DeadHeroes = 0;
         CanEscape = false;
+        SceneManager.LoadScene("Scenes/SampleScene");
     }
 }
