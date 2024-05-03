@@ -65,7 +65,6 @@
     <Analyzer Include="/Applications/Unity/Hub/Editor/2023.2.17f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Backends/GPUCompute/Compute.Backend.gen.cs" />
     <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Backends/OpsUtils.cs" />
     <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Compiler/Passes/ConcatenateTransposesPass.cs" />
     <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Backends/CPU/BurstCPU.Jobs.cs" />
@@ -91,8 +90,8 @@
     <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Layers/Layer.Math.cs" />
     <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Backends/CPU/BurstCPU.Jobs.Activation.gen.cs" />
     <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Backends/CPU/BurstCPU.Jobs.Pad.gen.cs" />
-    <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Compiler/Passes/ContractToSimplerLayerPass.cs" />
     <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Backends/CPU/BurstCPU.Helper.cs" />
+    <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Compiler/Passes/ContractToSimplerLayerPass.cs" />
     <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Converters/TextureTransform.cs" />
     <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Layers/Layer.Trigonometric.cs" />
     <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Compiler/Analyser/GraphLogicAnalysis.cs" />
@@ -106,8 +105,8 @@
     <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Backends/CPU/BurstCPUJobSystem.cs" />
     <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Backends/IBackend.cs" />
     <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Compiler/Passes/RoundDenormalWeightsPass.cs" />
-    <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Compiler/Passes/FuseDensePass.cs" />
     <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/PluginInterfaces.cs" />
+    <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Compiler/Passes/FuseDensePass.cs" />
     <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Backends/CPU/BurstCPU.MatMul.gen.cs" />
     <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Compiler/Passes/SimplifyReshapeInputPass.cs" />
     <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Compiler/Passes/FuseLinearLayersPass.cs" />
@@ -122,8 +121,8 @@
     <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Layers/Layer.ObjectDetection.cs" />
     <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PoolA.gen.cs" />
     <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Backends/GPUPixel/GPUPixelBurstJobs.cs" />
-    <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Converters/TextureConverter.cs" />
     <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Backends/GPUCompute/ComputeInfo.cs" />
+    <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Converters/TextureConverter.cs" />
     <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/ShapeInference/ShapeInferenceHelper.cs" />
     <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Backends/CPU/BurstCPU.Jobs.Reduction.gen.cs" />
     <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Backends/CPU/BurstCPU.Jobs.ImageBased.gen.cs" />
@@ -158,8 +157,8 @@
     <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Compiler/Validation/ValidateShapeInference.cs" />
     <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Backends/CPU/ReferenceCPU.cs" />
     <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Backends/CPU/ReferenceCPU.Einsum.cs" />
-    <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Backends/GPUCompute/ComputeFunc.cs" />
     <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Layers/Layer.Logical.cs" />
+    <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Backends/GPUCompute/ComputeFunc.cs" />
     <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Compiler/Passes/ValidatePasses.cs" />
     <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Internals/ModelAssetWeightsData.cs" />
     <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/TensorInt.cs" />
@@ -176,14 +175,14 @@
     <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/ShapeInference/TensorShapeInferenceHelper.cs" />
     <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Backends/GPUCompute/ComputeHelper.cs" />
     <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Compiler/Passes/EinsumToMatMulPass.cs" />
-    <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Backends/GPUCompute/ComputeShaderSingleton.cs" />
     <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Backends/CPU/BurstCPU.Jobs.PadA.gen.cs" />
+    <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Backends/GPUCompute/ComputeShaderSingleton.cs" />
     <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Backends/TensorAllocators.cs" />
     <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Layers/Layer.Activation.cs" />
     <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Compiler/Passes/RemoveNoOpsPass.cs" />
-    <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Layers/Layer.Generator.cs" />
-    <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Layers/Layer.Indexing.cs" />
     <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Compiler/Analyser/MemoryFootprintAnalysis.cs" />
+    <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Layers/Layer.Indexing.cs" />
+    <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Layers/Layer.Generator.cs" />
     <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Random.cs" />
     <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Layers/Layer.cs" />
     <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Backends/GPUCompute/CommandBufferHelper.cs" />
@@ -194,8 +193,9 @@
     <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Compiler/Passes/FuseScalarMadPass.cs" />
     <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Backends/BackendFactory.cs" />
     <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Compiler/Passes/FuseConstantsPass.cs" />
-    <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Logger.cs" />
     <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Backends/CPU/BurstCPU.Jobs.Einsum.gen.cs" />
+    <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Logger.cs" />
+    <Compile Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Backends/GPUCompute/Compute.Backend.gen.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Core/Resources/Sentis/PixelShaders/Dense.shader" />
@@ -764,6 +764,10 @@
       <HintPath>/Applications/Unity/Hub/Editor/2023.2.17f1/PlaybackEngines/AppleTVSupport/UnityEditor.AppleTV.Extensions.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="System.IO.Abstractions">
+      <HintPath>/Users/esajor/Desktop/ml-agents/com.unity.ml-agents/Plugins/System.IO.Abstractions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.VisualScripting.YamlDotNet">
       <HintPath>Library/PackageCache/com.unity.visualscripting@1.8.0/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll</HintPath>
       <Private>False</Private>
@@ -796,40 +800,36 @@
       <HintPath>Library/PackageCache/com.unity.visualscripting@1.8.0/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
-      <HintPath>Library/PackageCache/com.unity.visualscripting@1.8.0/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.TextureAssets">
-      <HintPath>Library/PackageCache/com.unity.visualscripting@1.8.0/Editor/VisualScripting.Core/EditorAssetResources/Unity.VisualScripting.TextureAssets.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="NuGetForUnity.PluginAPI">
-      <HintPath>Library/PackageCache/com.github-glitchenzo.nugetforunity@12574c32f6/Editor/PluginAPI/NuGetForUnity.PluginAPI.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>Assets/Packages/Newtonsoft.Json.13.0.3/lib/netstandard2.0/Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Google.Protobuf_Packed">
+      <HintPath>Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Plugins/Google.Protobuf_Packed.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="C5">
       <HintPath>Assets/Packages/C5.2.5.3/lib/netstandard1.0/C5.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Google.Protobuf_Packed">
-      <HintPath>Library/PackageCache/com.unity.sentis@1.2.0-exp.2/Runtime/Plugins/Google.Protobuf_Packed.dll</HintPath>
+    <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
+      <HintPath>Library/PackageCache/com.unity.visualscripting@1.8.0/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Grpc.Core">
+      <HintPath>/Users/esajor/Desktop/ml-agents/com.unity.ml-agents/Plugins/ProtoBuffer/Grpc.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="NuGetForUnity.PluginAPI">
+      <HintPath>Library/PackageCache/com.github-glitchenzo.nugetforunity@12574c32f6/Editor/PluginAPI/NuGetForUnity.PluginAPI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.TextureAssets">
+      <HintPath>Library/PackageCache/com.unity.visualscripting@1.8.0/Editor/VisualScripting.Core/EditorAssetResources/Unity.VisualScripting.TextureAssets.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System.IO.Abstractions.TestingHelpers">
       <HintPath>/Users/esajor/Desktop/ml-agents/com.unity.ml-agents/Plugins/System.IO.Abstractions.TestingHelpers.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="System.IO.Abstractions">
-      <HintPath>/Users/esajor/Desktop/ml-agents/com.unity.ml-agents/Plugins/System.IO.Abstractions.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Grpc.Core">
-      <HintPath>/Users/esajor/Desktop/ml-agents/com.unity.ml-agents/Plugins/ProtoBuffer/Grpc.Core.dll</HintPath>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Assets/Packages/Newtonsoft.Json.13.0.3/lib/netstandard2.0/Newtonsoft.Json.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
