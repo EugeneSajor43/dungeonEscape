@@ -11,6 +11,22 @@ public abstract class Tile : MonoBehaviour {
     public BaseUnit OccupiedUnit;
     public bool Walkable => _isWalkable && OccupiedUnit == null;
 
+    [SerializeField] public bool _isPortalSpawned;
+    [SerializeField] private Color _Portalcolor;
+    
+    public virtual void ColorPortal()
+    {
+
+        if (_isPortalSpawned == true)
+        {
+            _renderer.color = _Portalcolor;
+        }
+    }
+
+    public virtual void LightPath()
+    {
+        _renderer.color = _Portalcolor;
+    }
 
     public virtual void Init(int x, int y)
     {
@@ -30,7 +46,11 @@ public abstract class Tile : MonoBehaviour {
     }
 
     void OnMouseDown() {
-        UnitManager.Instance.PlayerMove();
+        /*UnitManager.Instance.KillEnemy();
+        if (!UnitManager.Instance.ValidPath()){
+            UnitManager.Instance.AStarSearch();
+        }
+        UnitManager.Instance.HeroMove();*/
     }
 
     public void SetUnit(BaseUnit unit) {

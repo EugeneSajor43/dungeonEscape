@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -35,7 +36,7 @@ public class GameManager : MonoBehaviour
                 UnitManager.Instance.SpawnEnemies();
                 break;
             case GameState.HeroesTurn:
-                //UnitManager.Instance.PlayerMove();
+                Invoke("HeroMoveset", 0);
                 break;
             case GameState.Heroes2Turn:
                 UnitManager.Instance.PlayerMove();
@@ -44,7 +45,7 @@ public class GameManager : MonoBehaviour
                 UnitManager.Instance.PlayerMove();
                 break;
             case GameState.EnemiesTurn:
-                UnitManager.Instance.EnemyMove();
+                Invoke("EnemyMoveset", 1);
                 break;
             case GameState.LostGame:
                 UnitManager.Instance.ResetGame();
@@ -57,6 +58,15 @@ public class GameManager : MonoBehaviour
             default:
                 throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
         }
+    }
+
+    public void HeroMoveset() {
+        UnitManager.Instance.AStarSearch();
+        UnitManager.Instance.HeroMove();
+    }
+
+    public void EnemyMoveset() {
+        UnitManager.Instance.EnemyMove();
     }
 }
 

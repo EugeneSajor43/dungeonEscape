@@ -1,0 +1,537 @@
+{
+  "format": 1,
+  "restore": {
+    "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Unity.VisualScripting.Shared.Editor.csproj": {}
+  },
+  "projects": {
+    "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Unity.VisualScripting.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Unity.VisualScripting.Core.csproj",
+        "projectName": "Unity.VisualScripting.Core",
+        "projectPath": "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Unity.VisualScripting.Core.csproj",
+        "packagesPath": "/Users/esajor/.nuget/packages/",
+        "outputPath": "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Temp/obj/Debug/Unity.VisualScripting.Core/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/esajor/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.315/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Unity.VisualScripting.Core.Editor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Unity.VisualScripting.Core.Editor.csproj",
+        "projectName": "Unity.VisualScripting.Core.Editor",
+        "projectPath": "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Unity.VisualScripting.Core.Editor.csproj",
+        "packagesPath": "/Users/esajor/.nuget/packages/",
+        "outputPath": "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Temp/obj/Debug/Unity.VisualScripting.Core.Editor/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/esajor/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Unity.VisualScripting.Core.csproj": {
+                "projectPath": "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Unity.VisualScripting.Core.csproj"
+              },
+              "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/UnityEditor.TestRunner.csproj": {
+                "projectPath": "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/UnityEditor.TestRunner.csproj"
+              },
+              "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/UnityEngine.TestRunner.csproj": {
+                "projectPath": "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/UnityEngine.TestRunner.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.315/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Unity.VisualScripting.Flow.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Unity.VisualScripting.Flow.csproj",
+        "projectName": "Unity.VisualScripting.Flow",
+        "projectPath": "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Unity.VisualScripting.Flow.csproj",
+        "packagesPath": "/Users/esajor/.nuget/packages/",
+        "outputPath": "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Temp/obj/Debug/Unity.VisualScripting.Flow/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/esajor/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Unity.VisualScripting.Core.csproj": {
+                "projectPath": "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Unity.VisualScripting.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.315/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Unity.VisualScripting.Flow.Editor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Unity.VisualScripting.Flow.Editor.csproj",
+        "projectName": "Unity.VisualScripting.Flow.Editor",
+        "projectPath": "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Unity.VisualScripting.Flow.Editor.csproj",
+        "packagesPath": "/Users/esajor/.nuget/packages/",
+        "outputPath": "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Temp/obj/Debug/Unity.VisualScripting.Flow.Editor/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/esajor/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Unity.VisualScripting.Core.csproj": {
+                "projectPath": "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Unity.VisualScripting.Core.csproj"
+              },
+              "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Unity.VisualScripting.Core.Editor.csproj": {
+                "projectPath": "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Unity.VisualScripting.Core.Editor.csproj"
+              },
+              "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Unity.VisualScripting.Flow.csproj": {
+                "projectPath": "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Unity.VisualScripting.Flow.csproj"
+              },
+              "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/UnityEditor.TestRunner.csproj": {
+                "projectPath": "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/UnityEditor.TestRunner.csproj"
+              },
+              "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/UnityEngine.TestRunner.csproj": {
+                "projectPath": "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/UnityEngine.TestRunner.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.315/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Unity.VisualScripting.Shared.Editor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Unity.VisualScripting.Shared.Editor.csproj",
+        "projectName": "Unity.VisualScripting.Shared.Editor",
+        "projectPath": "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Unity.VisualScripting.Shared.Editor.csproj",
+        "packagesPath": "/Users/esajor/.nuget/packages/",
+        "outputPath": "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Temp/obj/Debug/Unity.VisualScripting.Shared.Editor/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/esajor/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Unity.VisualScripting.Core.csproj": {
+                "projectPath": "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Unity.VisualScripting.Core.csproj"
+              },
+              "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Unity.VisualScripting.Core.Editor.csproj": {
+                "projectPath": "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Unity.VisualScripting.Core.Editor.csproj"
+              },
+              "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Unity.VisualScripting.Flow.csproj": {
+                "projectPath": "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Unity.VisualScripting.Flow.csproj"
+              },
+              "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Unity.VisualScripting.Flow.Editor.csproj": {
+                "projectPath": "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Unity.VisualScripting.Flow.Editor.csproj"
+              },
+              "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Unity.VisualScripting.State.csproj": {
+                "projectPath": "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Unity.VisualScripting.State.csproj"
+              },
+              "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Unity.VisualScripting.State.Editor.csproj": {
+                "projectPath": "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Unity.VisualScripting.State.Editor.csproj"
+              },
+              "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/UnityEditor.TestRunner.csproj": {
+                "projectPath": "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/UnityEditor.TestRunner.csproj"
+              },
+              "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/UnityEngine.TestRunner.csproj": {
+                "projectPath": "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/UnityEngine.TestRunner.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.315/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Unity.VisualScripting.State.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Unity.VisualScripting.State.csproj",
+        "projectName": "Unity.VisualScripting.State",
+        "projectPath": "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Unity.VisualScripting.State.csproj",
+        "packagesPath": "/Users/esajor/.nuget/packages/",
+        "outputPath": "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Temp/obj/Debug/Unity.VisualScripting.State/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/esajor/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Unity.VisualScripting.Core.csproj": {
+                "projectPath": "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Unity.VisualScripting.Core.csproj"
+              },
+              "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Unity.VisualScripting.Flow.csproj": {
+                "projectPath": "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Unity.VisualScripting.Flow.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.315/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Unity.VisualScripting.State.Editor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Unity.VisualScripting.State.Editor.csproj",
+        "projectName": "Unity.VisualScripting.State.Editor",
+        "projectPath": "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Unity.VisualScripting.State.Editor.csproj",
+        "packagesPath": "/Users/esajor/.nuget/packages/",
+        "outputPath": "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Temp/obj/Debug/Unity.VisualScripting.State.Editor/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/esajor/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Unity.VisualScripting.Core.csproj": {
+                "projectPath": "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Unity.VisualScripting.Core.csproj"
+              },
+              "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Unity.VisualScripting.Core.Editor.csproj": {
+                "projectPath": "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Unity.VisualScripting.Core.Editor.csproj"
+              },
+              "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Unity.VisualScripting.Flow.csproj": {
+                "projectPath": "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Unity.VisualScripting.Flow.csproj"
+              },
+              "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Unity.VisualScripting.Flow.Editor.csproj": {
+                "projectPath": "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Unity.VisualScripting.Flow.Editor.csproj"
+              },
+              "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Unity.VisualScripting.State.csproj": {
+                "projectPath": "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Unity.VisualScripting.State.csproj"
+              },
+              "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/UnityEditor.TestRunner.csproj": {
+                "projectPath": "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/UnityEditor.TestRunner.csproj"
+              },
+              "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/UnityEngine.TestRunner.csproj": {
+                "projectPath": "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/UnityEngine.TestRunner.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.315/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/UnityEditor.TestRunner.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/UnityEditor.TestRunner.csproj",
+        "projectName": "UnityEditor.TestRunner",
+        "projectPath": "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/UnityEditor.TestRunner.csproj",
+        "packagesPath": "/Users/esajor/.nuget/packages/",
+        "outputPath": "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Temp/obj/Debug/UnityEditor.TestRunner/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/esajor/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/UnityEngine.TestRunner.csproj": {
+                "projectPath": "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/UnityEngine.TestRunner.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.315/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/UnityEngine.TestRunner.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/UnityEngine.TestRunner.csproj",
+        "projectName": "UnityEngine.TestRunner",
+        "projectPath": "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/UnityEngine.TestRunner.csproj",
+        "packagesPath": "/Users/esajor/.nuget/packages/",
+        "outputPath": "/Volumes/Main/Unity/dungeonEscape/CLEAN/dragonEscape/dungeonEscape/Temp/obj/Debug/UnityEngine.TestRunner/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/esajor/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.315/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
