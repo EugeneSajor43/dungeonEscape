@@ -41,6 +41,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.2D.SpriteShape.Editor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.VisualStudio.Editor", "Unity.VisualStudio.Editor.csproj", "{62D01139-7DFB-0390-A684-34D33E219C00}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NuGetForUnity", "NuGetForUnity.csproj", "{384CCBF4-21F6-8510-0D19-038D7D13EAD4}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Rider.Editor", "Unity.Rider.Editor.csproj", "{A2C9C2FB-3D76-5CE1-BFC7-8C3EF97632FA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.InternalAPIEditorBridge.001", "Unity.InternalAPIEditorBridge.001.csproj", "{158B1615-3A00-5A98-D989-3C3870D858EC}"
@@ -177,6 +179,10 @@ Global
 		{62D01139-7DFB-0390-A684-34D33E219C00}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62D01139-7DFB-0390-A684-34D33E219C00}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{62D01139-7DFB-0390-A684-34D33E219C00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{384CCBF4-21F6-8510-0D19-038D7D13EAD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{384CCBF4-21F6-8510-0D19-038D7D13EAD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{384CCBF4-21F6-8510-0D19-038D7D13EAD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{384CCBF4-21F6-8510-0D19-038D7D13EAD4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A2C9C2FB-3D76-5CE1-BFC7-8C3EF97632FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A2C9C2FB-3D76-5CE1-BFC7-8C3EF97632FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A2C9C2FB-3D76-5CE1-BFC7-8C3EF97632FA}.Release|Any CPU.ActiveCfg = Release|Any CPU

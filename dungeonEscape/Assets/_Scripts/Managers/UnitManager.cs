@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using C5; 
+
 
 public class UnitManager : MonoBehaviour {
     public static UnitManager Instance;
@@ -14,6 +17,9 @@ public class UnitManager : MonoBehaviour {
     public bool CanEscape = false;
     public int EscapeCount = 0;
     public int DeadHeroes = 0;
+    public Dictionary<Vector3, Node> tileCosts = new Dictionary<Vector3, Node>(); 
+    System.Collections.Generic.HashSet<Vector3> heroPathSet = new System.Collections.Generic.HashSet<Vector3>();
+    Stack<Vector3> heroPath = new Stack<Vector3>();
 
     public BaseEnemy SelectedEnemy;
 
@@ -25,7 +31,7 @@ public class UnitManager : MonoBehaviour {
     }
 
     public void SpawnHeroes() {
-        var heroes = _units.Where(u => u.Faction == Faction.Hero).OrderBy(o => Random.value);
+        var heroes = _units.Where(u => u.Faction == Faction.Hero);
         int trackHero = 0;
 
         foreach(var hero in heroes) {
@@ -69,7 +75,7 @@ public class UnitManager : MonoBehaviour {
         MenuManager.Instance.ShowSelectedHero(hero);
     }
 
-    public void PlayerMove() {
+    public void Player_Move() {
         //print("cehck");
         if((GameManager.Instance.GameState != GameState.HeroesTurn) &&
             (GameManager.Instance.GameState != GameState.Heroes2Turn) &&
@@ -77,7 +83,7 @@ public class UnitManager : MonoBehaviour {
         
         //print("passed");
 
-        BaseUnit currentHero = SelectedHeroes[GameManager.heroTurn-1];
+        BaseUnit currentHero = SelectedHeroes[2];
         Vector3 dummy_location = new Vector3(-1f, -1f, -1f);
         Vector3 hero_Location = (SelectedHeroes[0] != null) ? (SelectedHeroes[0].transform.position) : (dummy_location);
         Vector3 hero2_Location = (SelectedHeroes[1] != null) ? (SelectedHeroes[1].transform.position) : (dummy_location);
@@ -129,11 +135,6 @@ public class UnitManager : MonoBehaviour {
             }    
         }
 
-        int currentTurn = GameManager.heroTurn;
-        print(currentTurn);
-        GameManager.heroTurn = (GameManager.heroTurn < 3) ? (GameManager.heroTurn + 1) : (1);
-        //GameManager.Instance.ChangeState(GameState.EnemiesTurn);
-
         if (SelectedEnemy != null && currentHeroBH != null && SelectedEnemy.transform.position == currentHeroBH.transform.position) {
             print("Player kills");
             Destroy(SelectedEnemy.gameObject);
@@ -147,103 +148,380 @@ public class UnitManager : MonoBehaviour {
             print("Escaped");
             EscapeCount += 1;
             if (EscapeCount + DeadHeroes == 3) {
+                GameManager.Instance.ChangeState(GameState.WonGame);
+            }
+        }
+
+        GameManager.Instance.ChangeState(GameState.EnemiesTurn);
+
+    }
+
+    public void HeroMove() {
+        if (SelectedEnemy != null) {
+            Invoke("HeroMove1", 1);
+        } else {
+            Invoke("HeroMove2", 1);
+        }
+    }
+
+    public void HeroMove1() { 
+        BaseUnit currentHero = SelectedHeroes[0];
+        if (currentHero != null && heroPath.Count > 0) {
+            BaseHero currentHeroBH = (BaseHero)currentHero;
+            currentHeroBH.transform.position = heroPath.Pop();
+            if (currentHeroBH.transform.position == SelectedEnemy.transform.position) {
+                Destroy(SelectedEnemy.gameObject);
+                UndoPath();
+                heroPathSet.Clear();
+                print("Hero1 killed enemy");
+                CanEscape = true;
+                SpawnExit();
+            }
+        }
+        GameManager.Instance.ChangeState(GameState.Heroes2Turn);
+    }
+
+    public void HeroMove2() { 
+        BaseUnit currentHero = SelectedHeroes[0];
+        if (currentHero != null && heroPath.Count > 0) {
+            BaseHero currentHeroBH = (BaseHero)currentHero;
+            currentHeroBH.transform.position = heroPath.Pop();
+            if (CanEscape && currentHeroBH.transform.position == EscapeExit) {
+                UndoPath();
+                Destroy(currentHeroBH.gameObject);
+                print("Escaped");
+                EscapeCount += 1;
+                if (EscapeCount + DeadHeroes == 3) {
+                    GameManager.Instance.ChangeState(GameState.Heroes2Turn);
+                }
+            } else {
                 GameManager.Instance.ChangeState(GameState.Heroes2Turn);
             }
         }
+        GameManager.Instance.ChangeState(GameState.Heroes2Turn);
+    }
 
-        if (currentTurn == 1) {
+    public void KillEnemy() {
+        if (SelectedEnemy != null) {
+            print("Player kills");
+            Destroy(SelectedEnemy.gameObject);
+            heroPathSet.Clear();
+            CanEscape = true;
+            SpawnExit();
+        }
+    }
+
+    public bool ValidPath() {
+        Vector3 dummy_location = new Vector3(-1f, -1f, -1f);
+        Vector3 hero2_Location = (SelectedHeroes[1] != null) ? (SelectedHeroes[1].transform.position) : (dummy_location);
+        Vector3 hero3_Location = (SelectedHeroes[2] != null) ? (SelectedHeroes[2].transform.position) : (dummy_location);
+
+        if (heroPathSet.Count == 0 || heroPathSet.Contains(hero2_Location) || heroPathSet.Contains(hero3_Location) ) {
+            return false;
+        }
+
+        return true;
+    }
+
+    public void AStarSearch1() {
+        heroPath.Clear();
+
+        BaseUnit currentHero = SelectedHeroes[0];
+
+        if((GameManager.Instance.GameState != GameState.HeroesTurn) || (currentHero == null)) {
             GameManager.Instance.ChangeState(GameState.Heroes2Turn);
-        } 
-        else if (currentTurn == 2) {
-            GameManager.Instance.ChangeState(GameState.Heroes3Turn);
+            //return new Dictionary<int, Vector2>();
+            return;
+        }
+
+        Vector3 dummy_location = new Vector3(-1f, -1f, -1f);
+        Vector3 hero2_Location = (SelectedHeroes[1] != null) ? (SelectedHeroes[1].transform.position) : (dummy_location);
+        Vector3 hero3_Location = (SelectedHeroes[2] != null) ? (SelectedHeroes[2].transform.position) : (dummy_location);
+
+        BaseHero currentHeroBH = (BaseHero)currentHero;
+
+        // Creating a dictionary where keys are integers and values are arrays of integers
+        //Dictionary<int, Vector2> possibleMove = new Dictionary<int, Vector2>();
+        for (int row = 0; row < 16; ++row) {
+            for (int col = 0; col < 9; ++col) {
+                var location = new Vector3(row, col, 0f);
+                // Node tmpNode = Node.SetValues(int.MaxValue, (tmpNode.GCost + (int)ManhattanDistance(location, EscapeExit)), row, col, null);
+
+                Node tmpNode = new Node();
+                tmpNode.GCost = int.MaxValue;
+                tmpNode.FCost = tmpNode.GCost + (int)ManhattanDistance(location, SelectedEnemy.transform.position);
+                tmpNode.ParentNode = null;
+                tmpNode.x = row;
+                tmpNode.y = col;
+
+                tileCosts[location] = tmpNode;
+            }
+        }
+
+        tileCosts[currentHeroBH.transform.position].GCost = 0;
+
+        // Create an IntervalHeap of integers
+        var possibleMove = new IntervalHeap<(int, int, (float, float))>();
+        System.Collections.Generic.HashSet<Vector3> closedMoves = new System.Collections.Generic.HashSet<Vector3>();
+
+        int manhattanDistance = (int)ManhattanDistance(currentHeroBH.transform.position, SelectedEnemy.transform.position);
+        Node startNode = new Node();
+        startNode.HCost = manhattanDistance;
+        startNode.GCost = 0;
+        startNode.FCost = CalculateFCost(startNode.GCost, startNode.HCost);
+        startNode.ParentNode = null;
+        startNode.x = (int)currentHeroBH.transform.position.x;
+        startNode.y = (int)currentHeroBH.transform.position.y;
+
+
+        possibleMove.Add((startNode.FCost, startNode.HCost, (currentHeroBH.transform.position.x, currentHeroBH.transform.position.y)));
+
+        while (!possibleMove.IsEmpty) {
+            var currentNode = possibleMove.DeleteMin();
+            var currentHCost = currentNode.Item2;
+            Vector3 tmpLocation = new Vector3(currentNode.Item3.Item1, currentNode.Item3.Item2, 0f);
+            int currentGCost = tileCosts[tmpLocation].GCost;
+
+            if (tmpLocation == SelectedEnemy.transform.position) {
+                UndoPath();
+                FindPath(tileCosts[tmpLocation]);
+                print(currentNode);
+                print("Found Path");
+                heroPath.Pop();
+                return;
+            }
+
+            closedMoves.Add(tmpLocation);
+            float currentY = tmpLocation.y;
+            float currentX = tmpLocation.x;
+
+            foreach(var neighbor in AllValidNeighbors(hero2_Location, hero3_Location, currentX, currentY)) {
+                if (!closedMoves.Contains(neighbor)){
+                    float tentativeGCost = currentGCost +  ManhattanDistance(tmpLocation, neighbor);
+
+                    if (tentativeGCost < tileCosts[neighbor].GCost) {
+                        // Set parent of this node\
+                        Node parentNode = tileCosts[tmpLocation];
+                        tileCosts[neighbor].ParentNode = parentNode;
+
+                        // Create node for neighbor
+                        Node neighborNode = new Node();
+                        neighborNode.HCost = (int)ManhattanDistance(neighbor, SelectedEnemy.transform.position);
+                        neighborNode.GCost = (int)tentativeGCost;
+                        neighborNode.FCost = CalculateFCost(neighborNode.GCost, neighborNode.HCost);
+                        neighborNode.ParentNode = null;
+
+                        tileCosts[neighbor].GCost = neighborNode.GCost;
+                        tileCosts[neighbor].HCost = neighborNode.HCost;
+                        tileCosts[neighbor].FCost = neighborNode.FCost;
+
+                        var newMove = (tileCosts[neighbor].FCost, tileCosts[neighbor].HCost, (neighbor.x, neighbor.y));
+
+                        if (!possibleMove.Contains(newMove)) {
+                            possibleMove.Add(newMove);
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+    public void AStarSearch2() {
+        heroPath.Clear();
+
+        BaseUnit currentHero = SelectedHeroes[0];
+
+        if((GameManager.Instance.GameState != GameState.HeroesTurn) || (currentHero == null)) {
+            GameManager.Instance.ChangeState(GameState.Heroes2Turn);
+            //return new Dictionary<int, Vector2>();
+            return;
+        }
+
+        Vector3 dummy_location = new Vector3(-1f, -1f, -1f);
+        Vector3 hero2_Location = (SelectedHeroes[1] != null) ? (SelectedHeroes[1].transform.position) : (dummy_location);
+        Vector3 hero3_Location = (SelectedHeroes[2] != null) ? (SelectedHeroes[2].transform.position) : (dummy_location);
+
+        BaseHero currentHeroBH = (BaseHero)currentHero;
+
+        // Creating a dictionary where keys are integers and values are arrays of integers
+        //Dictionary<int, Vector2> possibleMove = new Dictionary<int, Vector2>();
+        for (int row = 0; row < 16; ++row) {
+            for (int col = 0; col < 9; ++col) {
+                var location = new Vector3(row, col, 0f);
+                // Node tmpNode = Node.SetValues(int.MaxValue, (tmpNode.GCost + (int)ManhattanDistance(location, EscapeExit)), row, col, null);
+
+                Node tmpNode = new Node();
+                tmpNode.GCost = int.MaxValue;
+                tmpNode.FCost = tmpNode.GCost + (int)ManhattanDistance(location, EscapeExit);
+                tmpNode.ParentNode = null;
+                tmpNode.x = row;
+                tmpNode.y = col;
+
+                tileCosts[location] = tmpNode;
+            }
+        }
+
+        tileCosts[currentHeroBH.transform.position].GCost = 0;
+
+        // Create an IntervalHeap of integers
+        var possibleMove = new IntervalHeap<(int, int, (float, float))>();
+        System.Collections.Generic.HashSet<Vector3> closedMoves = new System.Collections.Generic.HashSet<Vector3>();
+
+        int manhattanDistance = (int)ManhattanDistance(currentHeroBH.transform.position, EscapeExit);
+        Node startNode = new Node();
+        startNode.HCost = manhattanDistance;
+        startNode.GCost = 0;
+        startNode.FCost = CalculateFCost(startNode.GCost, startNode.HCost);
+        startNode.ParentNode = null;
+        startNode.x = (int)currentHeroBH.transform.position.x;
+        startNode.y = (int)currentHeroBH.transform.position.y;
+
+
+        possibleMove.Add((startNode.FCost, startNode.HCost, (currentHeroBH.transform.position.x, currentHeroBH.transform.position.y)));
+
+        while (!possibleMove.IsEmpty) {
+            var currentNode = possibleMove.DeleteMin();
+            var currentHCost = currentNode.Item2;
+            Vector3 tmpLocation = new Vector3(currentNode.Item3.Item1, currentNode.Item3.Item2, 0f);
+            int currentGCost = tileCosts[tmpLocation].GCost;
+
+            if (tmpLocation == EscapeExit) {
+                UndoPath();
+                FindPath(tileCosts[tmpLocation]);
+                print(currentNode);
+                print("Found Path");
+                heroPath.Pop();
+                return;
+            }
+
+            closedMoves.Add(tmpLocation);
+            float currentY = tmpLocation.y;
+            float currentX = tmpLocation.x;
+
+            foreach(var neighbor in AllValidNeighbors(hero2_Location, hero3_Location, currentX, currentY)) {
+                if (!closedMoves.Contains(neighbor)){
+                    float tentativeGCost = currentGCost +  ManhattanDistance(tmpLocation, neighbor);
+
+                    if (tentativeGCost < tileCosts[neighbor].GCost) {
+                        // Set parent of this node\
+                        Node parentNode = tileCosts[tmpLocation];
+                        tileCosts[neighbor].ParentNode = parentNode;
+
+                        // Create node for neighbor
+                        Node neighborNode = new Node();
+                        neighborNode.HCost = (int)ManhattanDistance(neighbor, EscapeExit);
+                        neighborNode.GCost = (int)tentativeGCost;
+                        neighborNode.FCost = CalculateFCost(neighborNode.GCost, neighborNode.HCost);
+                        neighborNode.ParentNode = null;
+
+                        tileCosts[neighbor].GCost = neighborNode.GCost;
+                        tileCosts[neighbor].HCost = neighborNode.HCost;
+                        tileCosts[neighbor].FCost = neighborNode.FCost;
+
+                        var newMove = (tileCosts[neighbor].FCost, tileCosts[neighbor].HCost, (neighbor.x, neighbor.y));
+
+                        if (!possibleMove.Contains(newMove)) {
+                            possibleMove.Add(newMove);
+                        }
+                    }
+                }
+            }
+        }
+
+    } 
+
+    public void AStarSearch() {
+        if (SelectedEnemy != null) {
+            AStarSearch1();
         } else {
-            GameManager.Instance.ChangeState(GameState.EnemiesTurn);
-        }
-
-        //SelectedEnemy.OccupiedTile = this;
-
-
-        /*if (OccupiedUnit != null) {
-            
-            if(OccupiedUnit.Faction == Faction.Hero) UnitManager.Instance.SetSelectedHero((BaseHero)OccupiedUnit);
-            else {
-                if (UnitManager.Instance.SelectedHero != null) {
-                    var enemy = (BaseEnemy) OccupiedUnit;
-                    Destroy(enemy.gameObject);
-                    UnitManager.Instance.SetSelectedHero(null);
-                    if (GameManager.heroTurn == 3) {
-                        GameManager.Instance.ChangeState(GameState.EnemiesTurn);
-                    }
-                    GameManager.heroTurn = (GameManager.heroTurn < 3) ? (GameManager.heroTurn + 1) : (0);
-                }
-            }*/
-            
-            /*print(GameManager.heroTurn);
-            if (GameManager.heroType == 1) {
-                if(OccupiedUnit.heroType == 1 && OccupiedUnit.Faction == Faction.Hero) UnitManager.Instance.SetSelectedHero((BaseHero)OccupiedUnit);
-                else {
-                    if (UnitManager.Instance.SelectedHero != null) {
-                        var enemy = (BaseEnemy) OccupiedUnit;
-                        Destroy(enemy.gameObject);
-                        UnitManager.Instance.SetSelectedHero(null);
-                        //GameManager.Instance.ChangeState(GameState.Heroes2Turn);
-                        print(GameManager.Instance.GameState);
-                    }
-                }
-            }  
-            else if (GameManager.heroType == 2) {
-                if(OccupiedUnit.heroType == 2 && OccupiedUnit.Faction == Faction.Hero) UnitManager.Instance.SetSelectedHero((BaseHero)OccupiedUnit);
-                else {
-                    if (UnitManager.Instance.SelectedHero != null) {
-                        var enemy = (BaseEnemy) OccupiedUnit;
-                        Destroy(enemy.gameObject);
-                        UnitManager.Instance.SetSelectedHero(null);
-                        //GameManager.Instance.ChangeState(GameState.Heroes3Turn);
-                    }
-                }
-            }   
-            else {
-                if(OccupiedUnit.heroType == 3 && OccupiedUnit.Faction == Faction.Hero) UnitManager.Instance.SetSelectedHero((BaseHero)OccupiedUnit);
-                else {
-                    if (UnitManager.Instance.SelectedHero != null) {
-                        var enemy = (BaseEnemy) OccupiedUnit;
-                        Destroy(enemy.gameObject);
-                        UnitManager.Instance.SetSelectedHero(null);
-                        //GameManager.Instance.ChangeState(GameState.EnemiesTurn);
-                    }
-                }
+            if (!ValidPath()) {
+                AStarSearch2();
             }
         }
-        else {
-            if (UnitManager.Instance.SelectedHero != null ) {
+    }
 
-                int currentTurn = UnitManager.Instance.SelectedHero.heroType;
+    public Stack<Vector3> FindPath(Node endNode) {
+        while (endNode != null) {
+            heroPath.Push(new Vector3(endNode.x, endNode.y, 0f));
+            Tile tilePath = GridManager.Instance.GetTileAtPosition(new Vector2(endNode.x, endNode.y));
+            //tilePath.LightPath();
 
-                
+            heroPathSet.Add(new Vector3(endNode.x, endNode.y, 0f));
+            endNode = endNode.ParentNode;
+        }
+        
+        return heroPath;
+    }
 
-                print(GameManager.heroTurn);
+    public void UndoPath() {
+        float currentX = SelectedHeroes[0].transform.position.x;
+        float currentY = SelectedHeroes[0].transform.position.y;
+        print(SelectedHeroes[0].transform.position);
 
-                if (currentTurn == GameManager.heroTurn) {
-                    SetUnit(UnitManager.Instance.SelectedHero);
+        Tile currentTile = GridManager.Instance.GetTileAtPosition(new Vector2(currentX, currentY));
+        currentTile.Init((int)currentX, (int)currentY);
 
-                    if (GameManager.heroTurn == 3) {
-                        GameManager.Instance.ChangeState(GameState.EnemiesTurn);
-                    }
-
-                    GameManager.heroTurn = (GameManager.heroTurn < 3) ? (GameManager.heroTurn + 1) : (0);
-                }
-                
-                
-                
-                UnitManager.Instance.SetSelectedHero(null); 
+        foreach(var box in heroPathSet) {
+            Vector3 current = new Vector3(box.x, box.y, 0f);
+            if (current == SelectedHeroes[0].transform.position) continue;
             
+            Tile tile1 = GridManager.Instance.GetTileAtPosition(new Vector2(box.x, box.y));
+            tile1.Init((int)box.x, (int)box.y);
+        }
+    }
+
+    public List<Vector3> AllValidNeighbors(Vector3 hero2_Location, Vector3 hero3_Location, float currentX, float currentY) {
+        // Creating a dictionary where keys are integers and values are arrays of integers
+        Dictionary<int, Vector2> directions = new Dictionary<int, Vector2>();
+
+        // List of all Valid neighbors
+        List<Vector3> possibleNeighbors = new List<Vector3>();
+
+        // Adding elements to the dictionary
+        directions.Add(0, new Vector2(-1f,0f));
+        directions.Add(1, new Vector2(1f,0f));
+        directions.Add(2, new Vector2(0f,-1f));
+        directions.Add(3, new Vector2(0f,1f));
+
+        foreach(var keyValue in directions) {
+            var direction = keyValue.Value;
+            float tmpX = currentX + direction.x;
+            float tmpY = currentY + direction.y;
+            Vector3 tmpLocation = new Vector3(tmpX, tmpY, 0f);
+            Tile tile1 = GridManager.Instance.GetTileAtPosition(new Vector2(tmpX, tmpY));
+
+            if ((0 <= tmpY && tmpY <= 8) && 
+                (0 <= tmpX && tmpX <= 15) &&
+                (tmpLocation != hero2_Location) &&
+                (tmpLocation != hero3_Location) &&
+                (tile1.TileName != "Mountain")) {
+                possibleNeighbors.Add(tmpLocation);
             }
-        }*/
+        }
+
+        return possibleNeighbors;
+    }
+
+    public float ManhattanDistance(Vector3 currentNode, Vector3 targetNode) {
+        // Manhattans Distance
+        //Eucliadian distance
+        float difX = System.Math.Abs(targetNode.x - currentNode.x);
+        float difY = System.Math.Abs(targetNode.y - currentNode.y);
+        float mDistance = difX + difY;
+        float diagnol = difX * difX + difY * difY;
+        float eDistance = (float)System.Math.Sqrt(diagnol);
+        return 40 * mDistance + 20 * eDistance + 30 * diagnol;
+    }    
+
+    public int CalculateFCost(int gCost, int hCost) {
+        return gCost + hCost;
     }
 
     public void SpawnExit() {
         var random = new System.Random();
         bool goodExit = false;
+        
 
         while (!goodExit) {
             // Generate a random integer: 0 (left/right) or 1 (up/bottom)
@@ -271,7 +549,18 @@ public class UnitManager : MonoBehaviour {
 
             Tile tile1 = GridManager.Instance.GetTileAtPosition(new Vector2(newX, newY));
             if (tile1.TileName != "Mountain") {
+                tile1._isPortalSpawned = true;
+                tile1.ColorPortal();
                 goodExit = true;
+                if (SelectedHeroes[0].transform.position == EscapeExit) {
+                    Destroy(SelectedHeroes[0].gameObject);
+                }
+                if (SelectedHeroes[1].transform.position == EscapeExit) {
+                    Destroy(SelectedHeroes[1].gameObject);
+                }
+                if (SelectedHeroes[2].transform.position == EscapeExit) {
+                    Destroy(SelectedHeroes[2].gameObject);
+                }
             }
 
         }
@@ -332,6 +621,7 @@ public class UnitManager : MonoBehaviour {
         if (SelectedEnemy != null) {
             if (SelectedEnemy.transform.position == hero_Location) {
                 print("Enemy kills");
+                UndoPath();
                 Destroy(SelectedHeroes[0].gameObject);
                 DeadHeroes += 1;
                 print(SelectedHeroes[0]);
@@ -372,5 +662,6 @@ public class UnitManager : MonoBehaviour {
         EscapeCount = 0;
         DeadHeroes = 0;
         CanEscape = false;
+        SceneManager.LoadScene("Scenes/SampleScene");
     }
 }

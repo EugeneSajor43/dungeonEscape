@@ -19,7 +19,11 @@ public class GameManager : MonoBehaviour
     {
         ChangeState(GameState.GenerateGrid);
     }
+    public void Hero2Moves()
+    {
 
+        UnitManager.Instance.Player_Move();
+    }
     public void ChangeState(GameState newState)
     {
         GameState = newState;
@@ -35,16 +39,16 @@ public class GameManager : MonoBehaviour
                 UnitManager.Instance.SpawnEnemies();
                 break;
             case GameState.HeroesTurn:
-                //UnitManager.Instance.PlayerMove();
+                Invoke("HeroMoveset", 0);
                 break;
             case GameState.Heroes2Turn:
-                UnitManager.Instance.PlayerMove();
+                Invoke("Hero2Moveset", 1);
                 break;
             case GameState.Heroes3Turn:
-                UnitManager.Instance.PlayerMove();
+                Invoke("Hero3Moveset", 1);
                 break;
             case GameState.EnemiesTurn:
-                UnitManager.Instance.EnemyMove();
+                Invoke("EnemyMoveset", 1);
                 break;
             case GameState.LostGame:
                 UnitManager.Instance.ResetGame();
@@ -57,6 +61,23 @@ public class GameManager : MonoBehaviour
             default:
                 throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
         }
+    }
+
+    public void HeroMoveset() {
+        UnitManager.Instance.AStarSearch();
+        UnitManager.Instance.HeroMove();
+    }
+
+    public void Hero2Moveset() {
+        MiniMax.PlayerMove();
+    }
+
+    public void Hero3Moveset() {
+        UnitManager.Instance.Player_Move();
+    }
+
+    public void EnemyMoveset() {
+        UnitManager.Instance.EnemyMove();
     }
 }
 
