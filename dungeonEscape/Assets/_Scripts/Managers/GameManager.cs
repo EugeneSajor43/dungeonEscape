@@ -20,6 +20,11 @@ public class GameManager : MonoBehaviour
         ChangeState(GameState.GenerateGrid);
     }
 
+    public void Hero1_move_call()
+    {
+        UnitManager.Instance.Hero1Move();
+    }
+
     public void ChangeState(GameState newState)
     {
         GameState = newState;
@@ -35,13 +40,14 @@ public class GameManager : MonoBehaviour
                 UnitManager.Instance.SpawnEnemies();
                 break;
             case GameState.HeroesTurn:
-                //UnitManager.Instance.PlayerMove();
+                //UnitManager.Instance.Hero1Move();
+                Invoke("Hero1_move_call", 1);
                 break;
             case GameState.Heroes2Turn:
-                UnitManager.Instance.PlayerMove();
+                UnitManager.Instance.Hero2Move();
                 break;
             case GameState.Heroes3Turn:
-                UnitManager.Instance.PlayerMove();
+                UnitManager.Instance.Hero3Move();
                 break;
             case GameState.EnemiesTurn:
                 UnitManager.Instance.EnemyMove();

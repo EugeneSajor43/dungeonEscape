@@ -70,6 +70,321 @@ public class UnitManager : MonoBehaviour {
         MenuManager.Instance.ShowSelectedHero(hero);
     }
 
+    public void Hero1Move()
+    {
+        if(GameManager.Instance.GameState != GameState.HeroesTurn)
+        {
+            return;
+        }
+
+        BaseUnit Current_Hero = SelectedHeroes[0];
+        float currentY = Current_Hero.transform.position.y;
+        float currentX = Current_Hero.transform.position.x;
+
+        bool is_UP_valid = false;
+        bool is_DOWN_valid = false;
+        bool is_RIGHT_valid = false;
+        bool is_LEFT_valid = false;
+
+        if((currentY + 1f) < 9)
+        {
+            float Y = currentY + 1f;
+            Tile tile0 = GridManager.Instance.GetTileAtPosition(new Vector2(currentX, Y));
+            if(tile0.TileName != "Mountain")
+            {
+                is_UP_valid = true;
+            }
+        }
+        if((currentY - 1f) >= 0)
+        {
+            float Y = currentY - 1f;
+            Tile tile1 = GridManager.Instance.GetTileAtPosition(new Vector2(currentX, Y));
+            if(tile1.TileName != "Mountain")
+            {
+                is_DOWN_valid = true;
+            }
+        }
+        if((currentX + 1f) < 16)
+        {
+            float X = currentX + 1f;
+            Tile tile2 = GridManager.Instance.GetTileAtPosition(new Vector2(X, currentY));
+            if(tile2.TileName != "Mountain")
+            {
+                is_RIGHT_valid = true;
+            }
+        }
+        if((currentX - 1f) >= 0)
+        {
+            float X = currentX - 1f;
+            Tile tile3 = GridManager.Instance.GetTileAtPosition(new Vector2(X, currentY));
+            if(tile3.TileName != "Mountain")
+            {
+                is_LEFT_valid = true;
+            }
+        }
+
+        var random = new System.Random();
+        bool made_move = false;
+
+        while(!made_move)
+        {
+            int direction = random.Next(0, 4);
+
+            if((direction == 0) && (is_UP_valid))
+            {
+                Current_Hero.transform.position += new Vector3(0f, 1f, 0f);
+                made_move = true;
+            }
+            if((direction == 1) && (is_DOWN_valid))
+            {
+                Current_Hero.transform.position += new Vector3(0f, -1f, 0f);
+                made_move = true;
+            }
+            if((direction == 2) && (is_RIGHT_valid))
+            {
+                Current_Hero.transform.position += new Vector3(1f, 0f, 0f);
+                made_move = true;
+            }
+            if((direction == 3) && (is_LEFT_valid))
+            {
+                Current_Hero.transform.position += new Vector3(-1f, 0f, 0f);
+                made_move = true;
+            }
+        }
+
+        if(SelectedEnemy.transform.position == Current_Hero.transform.position) 
+        {
+            print("Player kills");
+            Destroy(SelectedEnemy.gameObject);
+            CanEscape = true;
+            SpawnExit();
+        }
+
+        if(CanEscape && Current_Hero.transform.position == EscapeExit) 
+        {
+            print(Current_Hero.transform.position);
+            Destroy(Current_Hero.gameObject);
+            print("Escaped");
+            EscapeCount += 1;
+            if (EscapeCount + DeadHeroes == 3) {
+                GameManager.Instance.ChangeState(GameState.Heroes2Turn);
+            }
+        }
+
+        GameManager.Instance.ChangeState(GameState.Heroes2Turn);
+
+    }
+
+    public void Hero2Move()
+    {
+        if(GameManager.Instance.GameState != GameState.Heroes2Turn)
+        {
+            return;
+        }
+
+        BaseUnit Current_Hero = SelectedHeroes[1];
+        float currentY = Current_Hero.transform.position.y;
+        float currentX = Current_Hero.transform.position.x;
+
+        bool is_UP_valid = false;
+        bool is_DOWN_valid = false;
+        bool is_RIGHT_valid = false;
+        bool is_LEFT_valid = false;
+
+        if((currentY + 1f) < 9)
+        {
+            float Y = currentY + 1f;
+            Tile tile0 = GridManager.Instance.GetTileAtPosition(new Vector2(currentX, Y));
+            if(tile0.TileName != "Mountain")
+            {
+                is_UP_valid = true;
+            }
+        }
+        if((currentY - 1f) >= 0)
+        {
+            float Y = currentY - 1f;
+            Tile tile1 = GridManager.Instance.GetTileAtPosition(new Vector2(currentX, Y));
+            if(tile1.TileName != "Mountain")
+            {
+                is_DOWN_valid = true;
+            }
+        }
+        if((currentX + 1f) < 16)
+        {
+            float X = currentX + 1f;
+            Tile tile2 = GridManager.Instance.GetTileAtPosition(new Vector2(X, currentY));
+            if(tile2.TileName != "Mountain")
+            {
+                is_RIGHT_valid = true;
+            }
+        }
+        if((currentX - 1f) >= 0)
+        {
+            float X = currentX - 1f;
+            Tile tile3 = GridManager.Instance.GetTileAtPosition(new Vector2(X, currentY));
+            if(tile3.TileName != "Mountain")
+            {
+                is_LEFT_valid = true;
+            }
+        }
+
+        var random = new System.Random();
+        bool made_move = false;
+
+        while(!made_move)
+        {
+            int direction = random.Next(0, 4);
+
+            if((direction == 0) && (is_UP_valid))
+            {
+                Current_Hero.transform.position += new Vector3(0f, 1f, 0f);
+                made_move = true;
+            }
+            if((direction == 1) && (is_DOWN_valid))
+            {
+                Current_Hero.transform.position += new Vector3(0f, -1f, 0f);
+                made_move = true;
+            }
+            if((direction == 2) && (is_RIGHT_valid))
+            {
+                Current_Hero.transform.position += new Vector3(1f, 0f, 0f);
+                made_move = true;
+            }
+            if((direction == 3) && (is_LEFT_valid))
+            {
+                Current_Hero.transform.position += new Vector3(-1f, 0f, 0f);
+                made_move = true;
+            }
+        }
+
+        if(SelectedEnemy.transform.position == Current_Hero.transform.position) 
+        {
+            print("Player kills");
+            Destroy(SelectedEnemy.gameObject);
+            CanEscape = true;
+            SpawnExit();
+        }
+
+        if(CanEscape && Current_Hero.transform.position == EscapeExit) 
+        {
+            print(Current_Hero.transform.position);
+            Destroy(Current_Hero.gameObject);
+            print("Escaped");
+            EscapeCount += 1;
+            if (EscapeCount + DeadHeroes == 3) {
+                GameManager.Instance.ChangeState(GameState.Heroes2Turn);
+            }
+        }
+
+        GameManager.Instance.ChangeState(GameState.Heroes3Turn);
+
+    }
+
+    public void Hero3Move()
+    {
+        if(GameManager.Instance.GameState != GameState.Heroes3Turn)
+        {
+            return;
+        }
+
+        BaseUnit Current_Hero = SelectedHeroes[2];
+        float currentY = Current_Hero.transform.position.y;
+        float currentX = Current_Hero.transform.position.x;
+
+        bool is_UP_valid = false;
+        bool is_DOWN_valid = false;
+        bool is_RIGHT_valid = false;
+        bool is_LEFT_valid = false;
+
+        if((currentY + 1f) < 9)
+        {
+            float Y = currentY + 1f;
+            Tile tile0 = GridManager.Instance.GetTileAtPosition(new Vector2(currentX, Y));
+            if(tile0.TileName != "Mountain")
+            {
+                is_UP_valid = true;
+            }
+        }
+        if((currentY - 1f) >= 0)
+        {
+            float Y = currentY - 1f;
+            Tile tile1 = GridManager.Instance.GetTileAtPosition(new Vector2(currentX, Y));
+            if(tile1.TileName != "Mountain")
+            {
+                is_DOWN_valid = true;
+            }
+        }
+        if((currentX + 1f) < 16)
+        {
+            float X = currentX + 1f;
+            Tile tile2 = GridManager.Instance.GetTileAtPosition(new Vector2(X, currentY));
+            if(tile2.TileName != "Mountain")
+            {
+                is_RIGHT_valid = true;
+            }
+        }
+        if((currentX - 1f) >= 0)
+        {
+            float X = currentX - 1f;
+            Tile tile3 = GridManager.Instance.GetTileAtPosition(new Vector2(X, currentY));
+            if(tile3.TileName != "Mountain")
+            {
+                is_LEFT_valid = true;
+            }
+        }
+
+        var random = new System.Random();
+        bool made_move = false;
+
+        while(!made_move)
+        {
+            int direction = random.Next(0, 4);
+
+            if((direction == 0) && (is_UP_valid))
+            {
+                Current_Hero.transform.position += new Vector3(0f, 1f, 0f);
+                made_move = true;
+            }
+            if((direction == 1) && (is_DOWN_valid))
+            {
+                Current_Hero.transform.position += new Vector3(0f, -1f, 0f);
+                made_move = true;
+            }
+            if((direction == 2) && (is_RIGHT_valid))
+            {
+                Current_Hero.transform.position += new Vector3(1f, 0f, 0f);
+                made_move = true;
+            }
+            if((direction == 3) && (is_LEFT_valid))
+            {
+                Current_Hero.transform.position += new Vector3(-1f, 0f, 0f);
+                made_move = true;
+            }
+        }
+
+        if(SelectedEnemy.transform.position == Current_Hero.transform.position) 
+        {
+            print("Player kills");
+            Destroy(SelectedEnemy.gameObject);
+            CanEscape = true;
+            SpawnExit();
+        }
+
+        if(CanEscape && Current_Hero.transform.position == EscapeExit) 
+        {
+            print(Current_Hero.transform.position);
+            Destroy(Current_Hero.gameObject);
+            print("Escaped");
+            EscapeCount += 1;
+            if (EscapeCount + DeadHeroes == 3) {
+                GameManager.Instance.ChangeState(GameState.Heroes2Turn);
+            }
+        }
+
+        GameManager.Instance.ChangeState(GameState.EnemiesTurn);
+
+    }
+
     public void PlayerMove() {
         //print("cehck");
         if((GameManager.Instance.GameState != GameState.HeroesTurn) &&
