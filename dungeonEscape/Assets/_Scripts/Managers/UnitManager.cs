@@ -75,86 +75,137 @@ public class UnitManager : MonoBehaviour {
         MenuManager.Instance.ShowSelectedHero(hero);
     }
 
-    public void Player_Move() {
-        //print("cehck");
-        if((GameManager.Instance.GameState != GameState.HeroesTurn) &&
-            (GameManager.Instance.GameState != GameState.Heroes2Turn) &&
-            (GameManager.Instance.GameState != GameState.Heroes3Turn)) return;
-        
-        //print("passed");
-
-        BaseUnit currentHero = SelectedHeroes[2];
-        Vector3 dummy_location = new Vector3(-1f, -1f, -1f);
-        Vector3 hero_Location = (SelectedHeroes[0] != null) ? (SelectedHeroes[0].transform.position) : (dummy_location);
-        Vector3 hero2_Location = (SelectedHeroes[1] != null) ? (SelectedHeroes[1].transform.position) : (dummy_location);
-        Vector3 hero3_Location = (SelectedHeroes[2] != null) ? (SelectedHeroes[2].transform.position) : (dummy_location);
-        BaseHero currentHeroBH = (currentHero != null) ? ((BaseHero)currentHero) : (null);
-
-        var random = new System.Random();
-        bool inBounds = false;
-
-        while (!inBounds && currentHero != null) {
-            // Generate a random integer: 0 (move in x) or 1 (move in y)
-            int direction = random.Next(0, 2);
-
-            // Generate a random integer: 0 (move in down or right) or 1 (move up or left)
-            int randomNum = random.Next(0, 2);
-            float progress = (randomNum == 1) ? 1f : -1f;
-
-            float currentY = currentHeroBH.transform.position.y;
-            float currentX = currentHeroBH.transform.position.x;
-
-            float tmp_y = currentHeroBH.transform.position.y + progress;
-            float tmp_x = currentHeroBH.transform.position.x + progress;
-
-            Vector3 tmp_final1 = new Vector3(currentX, tmp_y, 0f);
-            Vector3 tmp_final2 = new Vector3(tmp_x, currentY, 0f);
-
-            Tile tile1 = GridManager.Instance.GetTileAtPosition(new Vector2(currentX, tmp_y));
-            Tile tile2 = GridManager.Instance.GetTileAtPosition(new Vector2(tmp_x, currentY));
-
-            if (direction == 1) {
-                if ((0 <= tmp_y && tmp_y <= 8) && 
-                    (tmp_final1 != hero_Location) &&
-                    (tmp_final1 != hero2_Location) &&
-                    (tmp_final1 != hero3_Location) &&
-                    (tile1.TileName != "Mountain")) {
-                    currentHeroBH.transform.position += new Vector3(0f, progress, 0f);
-                    inBounds = true;
-                }
-            } 
-            else {
-                if (0 <= tmp_x && tmp_x <= 15 && 
-                    (tmp_final2 != hero_Location) &&
-                    (tmp_final2 != hero2_Location) &&
-                    (tmp_final2 != hero3_Location) &&
-                    (tile2.TileName != "Mountain")) {
-                    currentHeroBH.transform.position += new Vector3(progress, 0f, 0f);
-                    inBounds = true;
-                }
-            }    
+    public void Player_Move(){
+        if(GameManager.Instance.GameState != GameState.Heroes3Turn)
+        {
+            return;
         }
 
-        if (SelectedEnemy != null && currentHeroBH != null && SelectedEnemy.transform.position == currentHeroBH.transform.position) {
+        BaseUnit Current_Hero = SelectedHeroes[2];
+        Vector3 dummy_location = new Vector3(-1f, -1f, -1f);
+        Vector3 hero1_Location = (SelectedHeroes[0] != null) ? (SelectedHeroes[0].transform.position) : (dummy_location);
+        Vector3 hero2_Location = (SelectedHeroes[1] != null) ? (SelectedHeroes[1].transform.position) : (dummy_location);
+        float currentY = Current_Hero.transform.position.y;
+        float currentX = Current_Hero.transform.position.x;
+
+        bool is_UP_valid = false;
+        bool is_DOWN_valid = false;
+        bool is_RIGHT_valid = false;
+        bool is_LEFT_valid = false;
+
+        if((currentY + 1f) < 9)
+        {
+            is_UP_valid = true;
+            float Y = currentY + 1f;
+            Vector3 UP_pos = new Vector3(currentX, Y, 0f);
+            Tile tile0 = GridManager.Instance.GetTileAtPosition(new Vector2(currentX, Y));
+            if(tile0.TileName == "Mountain")
+            {
+                is_UP_valid = false;
+            }
+            if((UP_pos == hero1_Location) || (UP_pos == hero2_Location))
+            {
+                is_UP_valid = false;
+            }
+        }
+        if((currentY - 1f) >= 0)
+        {
+            is_DOWN_valid = true;
+            float Y = currentY - 1f;
+            Vector3 DOWN_pos = new Vector3(currentX, Y, 0f);
+            Tile tile1 = GridManager.Instance.GetTileAtPosition(new Vector2(currentX, Y));
+            if(tile1.TileName == "Mountain")
+            {
+                is_DOWN_valid = false;
+            }
+            if((DOWN_pos == hero1_Location) || (DOWN_pos == hero2_Location))
+            {
+                is_DOWN_valid = false;
+            }
+        }
+        if((currentX + 1f) < 16)
+        {
+            is_RIGHT_valid = true;
+            float X = currentX + 1f;
+            Vector3 RIGHT_pos = new Vector3(X, currentY, 0f);
+            Tile tile2 = GridManager.Instance.GetTileAtPosition(new Vector2(X, currentY));
+            if(tile2.TileName == "Mountain")
+            {
+                is_RIGHT_valid = false;
+            }
+            if((RIGHT_pos == hero1_Location) || (RIGHT_pos == hero2_Location))
+            {
+                is_RIGHT_valid = false;
+            }
+        }
+        if((currentX - 1f) >= 0)
+        {
+            is_LEFT_valid = true;
+            float X = currentX - 1f;
+            Vector3 LEFT_pos = new Vector3(X, currentY, 0f);
+            Tile tile3 = GridManager.Instance.GetTileAtPosition(new Vector2(X, currentY));
+            if(tile3.TileName == "Mountain")
+            {
+                is_LEFT_valid = false;
+            }
+            if((LEFT_pos == hero1_Location) || (LEFT_pos == hero2_Location))
+            {
+                is_LEFT_valid = false;
+            }
+        }
+
+        var random = new System.Random();
+        bool made_move = false;
+
+        while(!made_move)
+        {
+            int direction = random.Next(0, 4);
+
+            if((direction == 0) && (is_UP_valid))
+            {
+                Current_Hero.transform.position += new Vector3(0f, 1f, 0f);
+                made_move = true;
+            }
+            if((direction == 1) && (is_DOWN_valid))
+            {
+                Current_Hero.transform.position += new Vector3(0f, -1f, 0f);
+                made_move = true;
+            }
+            if((direction == 2) && (is_RIGHT_valid))
+            {
+                Current_Hero.transform.position += new Vector3(1f, 0f, 0f);
+                made_move = true;
+            }
+            if((direction == 3) && (is_LEFT_valid))
+            {
+                Current_Hero.transform.position += new Vector3(-1f, 0f, 0f);
+                made_move = true;
+            }
+        }
+
+        if(SelectedEnemy.transform.position == Current_Hero.transform.position) 
+        {
             print("Player kills");
             Destroy(SelectedEnemy.gameObject);
             CanEscape = true;
             SpawnExit();
         }
 
-        if (currentHeroBH != null && CanEscape && currentHeroBH.transform.position == EscapeExit) {
-            print(currentHeroBH.transform.position);
-            Destroy(currentHeroBH.gameObject);
+        if(CanEscape && Current_Hero.transform.position == EscapeExit) 
+        {
+            print(Current_Hero.transform.position);
+            Destroy(Current_Hero.gameObject);
             print("Escaped");
             EscapeCount += 1;
             if (EscapeCount + DeadHeroes == 3) {
-                GameManager.Instance.ChangeState(GameState.WonGame);
+                GameManager.Instance.ChangeState(GameState.EnemiesTurn);
             }
         }
 
         GameManager.Instance.ChangeState(GameState.EnemiesTurn);
 
     }
+
 
     public void HeroMove() {
         if (SelectedEnemy != null) {
@@ -641,7 +692,7 @@ public class UnitManager : MonoBehaviour {
         }
 
         //SelectedEnemy.OccupiedTile = this;
-        GameManager.Instance.ChangeState(GameState.HeroesTurn);
+        GameManager.Instance.ChangeState(GameState.Heroes3Turn);
     }
 
     public void ResetGame() {
