@@ -78,6 +78,9 @@ public class UnitManager : MonoBehaviour {
         }
 
         BaseUnit Current_Hero = SelectedHeroes[0];
+        Vector3 dummy_location = new Vector3(-1f, -1f, -1f);
+        Vector3 hero2_Location = (SelectedHeroes[1] != null) ? (SelectedHeroes[1].transform.position) : (dummy_location);
+        Vector3 hero3_Location = (SelectedHeroes[2] != null) ? (SelectedHeroes[2].transform.position) : (dummy_location);
         float currentY = Current_Hero.transform.position.y;
         float currentX = Current_Hero.transform.position.x;
 
@@ -89,8 +92,13 @@ public class UnitManager : MonoBehaviour {
         if((currentY + 1f) < 9)
         {
             float Y = currentY + 1f;
+            Vector3 UP_pos = new Vector3(currentX, Y, 0f);
             Tile tile0 = GridManager.Instance.GetTileAtPosition(new Vector2(currentX, Y));
             if(tile0.TileName != "Mountain")
+            {
+                is_UP_valid = true;
+            }
+            if((UP_pos != hero2_Location) && (UP_pos != hero3_Location))
             {
                 is_UP_valid = true;
             }
@@ -98,8 +106,13 @@ public class UnitManager : MonoBehaviour {
         if((currentY - 1f) >= 0)
         {
             float Y = currentY - 1f;
+            Vector3 DOWN_pos = new Vector3(currentX, Y, 0f);
             Tile tile1 = GridManager.Instance.GetTileAtPosition(new Vector2(currentX, Y));
             if(tile1.TileName != "Mountain")
+            {
+                is_DOWN_valid = true;
+            }
+            if((DOWN_pos != hero2_Location) && (DOWN_pos != hero3_Location))
             {
                 is_DOWN_valid = true;
             }
@@ -107,8 +120,13 @@ public class UnitManager : MonoBehaviour {
         if((currentX + 1f) < 16)
         {
             float X = currentX + 1f;
+            Vector3 RIGHT_pos = new Vector3(X, currentY, 0f);
             Tile tile2 = GridManager.Instance.GetTileAtPosition(new Vector2(X, currentY));
             if(tile2.TileName != "Mountain")
+            {
+                is_RIGHT_valid = true;
+            }
+            if((RIGHT_pos != hero2_Location) && (RIGHT_pos != hero3_Location))
             {
                 is_RIGHT_valid = true;
             }
@@ -116,8 +134,13 @@ public class UnitManager : MonoBehaviour {
         if((currentX - 1f) >= 0)
         {
             float X = currentX - 1f;
+            Vector3 LEFT_pos = new Vector3(X, currentY, 0f);
             Tile tile3 = GridManager.Instance.GetTileAtPosition(new Vector2(X, currentY));
             if(tile3.TileName != "Mountain")
+            {
+                is_LEFT_valid = true;
+            }
+            if((LEFT_pos != hero2_Location) && (LEFT_pos != hero3_Location))
             {
                 is_LEFT_valid = true;
             }
@@ -183,6 +206,9 @@ public class UnitManager : MonoBehaviour {
         }
 
         BaseUnit Current_Hero = SelectedHeroes[1];
+        Vector3 dummy_location = new Vector3(-1f, -1f, -1f);
+        Vector3 hero1_Location = (SelectedHeroes[0] != null) ? (SelectedHeroes[0].transform.position) : (dummy_location);
+        Vector3 hero3_Location = (SelectedHeroes[2] != null) ? (SelectedHeroes[2].transform.position) : (dummy_location);
         float currentY = Current_Hero.transform.position.y;
         float currentX = Current_Hero.transform.position.x;
 
@@ -194,8 +220,13 @@ public class UnitManager : MonoBehaviour {
         if((currentY + 1f) < 9)
         {
             float Y = currentY + 1f;
+            Vector3 UP_pos = new Vector3(currentX, Y, 0f);
             Tile tile0 = GridManager.Instance.GetTileAtPosition(new Vector2(currentX, Y));
             if(tile0.TileName != "Mountain")
+            {
+                is_UP_valid = true;
+            }
+            if((UP_pos != hero1_Location) && (UP_pos != hero3_Location))
             {
                 is_UP_valid = true;
             }
@@ -203,8 +234,13 @@ public class UnitManager : MonoBehaviour {
         if((currentY - 1f) >= 0)
         {
             float Y = currentY - 1f;
+            Vector3 DOWN_pos = new Vector3(currentX, Y, 0f);
             Tile tile1 = GridManager.Instance.GetTileAtPosition(new Vector2(currentX, Y));
             if(tile1.TileName != "Mountain")
+            {
+                is_DOWN_valid = true;
+            }
+            if((DOWN_pos != hero1_Location) && (DOWN_pos != hero3_Location))
             {
                 is_DOWN_valid = true;
             }
@@ -212,8 +248,13 @@ public class UnitManager : MonoBehaviour {
         if((currentX + 1f) < 16)
         {
             float X = currentX + 1f;
+            Vector3 RIGHT_pos = new Vector3(X, currentY, 0f);
             Tile tile2 = GridManager.Instance.GetTileAtPosition(new Vector2(X, currentY));
             if(tile2.TileName != "Mountain")
+            {
+                is_RIGHT_valid = true;
+            }
+            if((RIGHT_pos != hero1_Location) && (RIGHT_pos != hero3_Location))
             {
                 is_RIGHT_valid = true;
             }
@@ -221,8 +262,13 @@ public class UnitManager : MonoBehaviour {
         if((currentX - 1f) >= 0)
         {
             float X = currentX - 1f;
+            Vector3 LEFT_pos = new Vector3(X, currentY, 0f);
             Tile tile3 = GridManager.Instance.GetTileAtPosition(new Vector2(X, currentY));
             if(tile3.TileName != "Mountain")
+            {
+                is_LEFT_valid = true;
+            }
+            if((LEFT_pos != hero1_Location) && (LEFT_pos != hero3_Location))
             {
                 is_LEFT_valid = true;
             }
@@ -288,6 +334,9 @@ public class UnitManager : MonoBehaviour {
         }
 
         BaseUnit Current_Hero = SelectedHeroes[2];
+        Vector3 dummy_location = new Vector3(-1f, -1f, -1f);
+        Vector3 hero1_Location = (SelectedHeroes[0] != null) ? (SelectedHeroes[0].transform.position) : (dummy_location);
+        Vector3 hero2_Location = (SelectedHeroes[1] != null) ? (SelectedHeroes[1].transform.position) : (dummy_location);
         float currentY = Current_Hero.transform.position.y;
         float currentX = Current_Hero.transform.position.x;
 
@@ -299,8 +348,13 @@ public class UnitManager : MonoBehaviour {
         if((currentY + 1f) < 9)
         {
             float Y = currentY + 1f;
+            Vector3 UP_pos = new Vector3(currentX, Y, 0f);
             Tile tile0 = GridManager.Instance.GetTileAtPosition(new Vector2(currentX, Y));
             if(tile0.TileName != "Mountain")
+            {
+                is_UP_valid = true;
+            }
+            if((UP_pos != hero1_Location) && (UP_pos != hero2_Location))
             {
                 is_UP_valid = true;
             }
@@ -308,8 +362,13 @@ public class UnitManager : MonoBehaviour {
         if((currentY - 1f) >= 0)
         {
             float Y = currentY - 1f;
+            Vector3 DOWN_pos = new Vector3(currentX, Y, 0f);
             Tile tile1 = GridManager.Instance.GetTileAtPosition(new Vector2(currentX, Y));
             if(tile1.TileName != "Mountain")
+            {
+                is_DOWN_valid = true;
+            }
+            if((DOWN_pos != hero1_Location) && (DOWN_pos != hero2_Location))
             {
                 is_DOWN_valid = true;
             }
@@ -317,8 +376,13 @@ public class UnitManager : MonoBehaviour {
         if((currentX + 1f) < 16)
         {
             float X = currentX + 1f;
+            Vector3 RIGHT_pos = new Vector3(X, currentY, 0f);
             Tile tile2 = GridManager.Instance.GetTileAtPosition(new Vector2(X, currentY));
             if(tile2.TileName != "Mountain")
+            {
+                is_RIGHT_valid = true;
+            }
+            if((RIGHT_pos != hero1_Location) && (RIGHT_pos != hero2_Location))
             {
                 is_RIGHT_valid = true;
             }
@@ -326,8 +390,13 @@ public class UnitManager : MonoBehaviour {
         if((currentX - 1f) >= 0)
         {
             float X = currentX - 1f;
+            Vector3 LEFT_pos = new Vector3(X, currentY, 0f);
             Tile tile3 = GridManager.Instance.GetTileAtPosition(new Vector2(X, currentY));
             if(tile3.TileName != "Mountain")
+            {
+                is_LEFT_valid = true;
+            }
+            if((LEFT_pos != hero1_Location) && (LEFT_pos != hero2_Location))
             {
                 is_LEFT_valid = true;
             }
