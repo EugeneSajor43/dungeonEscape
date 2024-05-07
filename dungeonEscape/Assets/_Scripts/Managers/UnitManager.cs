@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UnitManager : MonoBehaviour {
     public static UnitManager Instance;
@@ -11,7 +12,9 @@ public class UnitManager : MonoBehaviour {
     public BaseHero SelectedHero;
     public BaseUnit[] SelectedHeroes = new BaseHero[3];
     public Vector3 EscapeExit;
-    public bool CanEscape = false;
+    public bool CanEscape = false;           /// <summary>
+    /// change this to false!!!!!!1
+    /// </summary>
     public int EscapeCount = 0;
     public int DeadHeroes = 0;
 
@@ -25,7 +28,7 @@ public class UnitManager : MonoBehaviour {
     }
 
     public void SpawnHeroes() {
-        var heroes = _units.Where(u => u.Faction == Faction.Hero).OrderBy(o => Random.value);
+        var heroes = _units.Where(u => u.Faction == Faction.Hero);
         int trackHero = 0;
 
         foreach(var hero in heroes) {
@@ -130,7 +133,7 @@ public class UnitManager : MonoBehaviour {
         }
 
         int currentTurn = GameManager.heroTurn;
-        print(currentTurn);
+        //print(currentTurn);
         GameManager.heroTurn = (GameManager.heroTurn < 3) ? (GameManager.heroTurn + 1) : (1);
         //GameManager.Instance.ChangeState(GameState.EnemiesTurn);
 
@@ -272,10 +275,12 @@ public class UnitManager : MonoBehaviour {
             Tile tile1 = GridManager.Instance.GetTileAtPosition(new Vector2(newX, newY));
             if (tile1.TileName != "Mountain") {
                 goodExit = true;
+                tile1._isPortalSpawned = true;
+                tile1.ColorPortal();
             }
 
         }
-
+        
         print(EscapeExit);
     }
 
@@ -372,5 +377,7 @@ public class UnitManager : MonoBehaviour {
         EscapeCount = 0;
         DeadHeroes = 0;
         CanEscape = false;
+        SceneManager.LoadScene("Scenes/SampleScene");
     }
+
 }

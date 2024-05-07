@@ -28,7 +28,7 @@ public class GridManager : MonoBehaviour {
                 var randomTile = Random.Range(0, 6) == 3 ? _mountainTile : _grassTile;
                 var spawnedTile = Instantiate(randomTile, new Vector3(x, y), Quaternion.identity);
                 spawnedTile.name = $"Tile {x} {y}";
-
+                spawnedTile.gridLocation = new Vector2Int(x, y);    
               
                 spawnedTile.Init(x,y);
 
@@ -55,5 +55,10 @@ public class GridManager : MonoBehaviour {
     {
         if (_tiles.TryGetValue(pos, out var tile)) return tile;
         return null;
+    }
+
+    public Dictionary<Vector2, Tile> GetGrid()
+    {
+        return _tiles;
     }
 }

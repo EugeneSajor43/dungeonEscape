@@ -19,7 +19,11 @@ public class GameManager : MonoBehaviour
     {
         ChangeState(GameState.GenerateGrid);
     }
+    public void Hero2Moves()
+    {
 
+        UnitManager.Instance.PlayerMove();
+    }
     public void ChangeState(GameState newState)
     {
         GameState = newState;
@@ -36,14 +40,16 @@ public class GameManager : MonoBehaviour
                 break;
             case GameState.HeroesTurn:
                 //UnitManager.Instance.PlayerMove();
+                Invoke("Hero2Moves", 1);
                 break;
             case GameState.Heroes2Turn:
-                UnitManager.Instance.PlayerMove();
+                MiniMax.PlayerMove();
                 break;
             case GameState.Heroes3Turn:
                 UnitManager.Instance.PlayerMove();
                 break;
             case GameState.EnemiesTurn:
+                
                 UnitManager.Instance.EnemyMove();
                 break;
             case GameState.LostGame:
