@@ -4,7 +4,8 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using C5; 
+using C5;
+using Unity.VisualScripting;
 
 
 public class UnitManager : MonoBehaviour {
@@ -21,7 +22,18 @@ public class UnitManager : MonoBehaviour {
     System.Collections.Generic.HashSet<Vector3> heroPathSet = new System.Collections.Generic.HashSet<Vector3>();
     Stack<Vector3> heroPath = new Stack<Vector3>();
 
+    [SerializeField] public Portal portal; //Prefab for Portal
+
     public BaseEnemy SelectedEnemy;
+
+        // Update is called once per frame
+    void Update()
+    {
+        if ((CanEscape))
+        {
+            Instantiate(portal, EscapeExit,  Quaternion.identity);
+        }
+    }
 
     void Awake() {
         Instance = this;
@@ -692,7 +704,9 @@ public class UnitManager : MonoBehaviour {
         }
 
         //SelectedEnemy.OccupiedTile = this;
+     
         GameManager.Instance.ChangeState(GameState.Heroes3Turn);
+
     }
 
     public void ResetGame() {

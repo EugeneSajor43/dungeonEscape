@@ -69,7 +69,9 @@
     <Compile Include="Assets/_Scripts/Tiles/Tile.cs" />
     <Compile Include="Assets/_Scripts/Units/Enemies/BaseEnemy.cs" />
     <Compile Include="Assets/_Scripts/Units/Heroes/BaseHero.cs" />
+    <Compile Include="Assets/_Scripts/Units/Structure/Portal.cs" />
     <Compile Include="Assets/_Scripts/Units/ScriptableUnit.cs" />
+    <Compile Include="Assets/_Scripts/Units/VoidEventChannelSO.cs" />
     <Compile Include="Assets/_Scripts/Managers/GridManager.cs" />
     <Compile Include="Assets/_Scripts/AO Algo/Node.cs" />
     <Compile Include="Assets/_Scripts/Units/BaseUnit.cs" />
@@ -84,6 +86,7 @@
     <Compile Include="Assets/_Scripts/Units/AstarMIniMax.cs" />
     <Compile Include="Assets/_Scripts/Units/MiniMax.cs" />
     <Compile Include="Assets/_Scripts/Managers/UnitManager.cs" />
+    <Compile Include="Assets/_Scripts/Units/Structure/BaseStructure.cs" />
     <Compile Include="Assets/_Scripts/Units/Heroes/Hero1.cs" />
     <Compile Include="Assets/_Scripts/Tiles/MountainTile.cs" />
   </ItemGroup>

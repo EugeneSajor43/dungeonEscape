@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.MLAgents;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,9 +11,8 @@ public class GameManager : MonoBehaviour
     public GameState GameState;
     public static int heroTurn;
 
-    public Hero3Agent myAgent;
 
-    public academy myAcedemy;
+
 
     
 
@@ -26,8 +26,6 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         ChangeState(GameState.GenerateGrid);
-        myAgent = new Hero3Agent();
-        myAcedemy = new academy();
     }
     public void Hero2Moves()
     {
@@ -54,8 +52,8 @@ public class GameManager : MonoBehaviour
                 Invoke("Hero2Moveset", 0);
                 break;
             case GameState.Heroes3Turn:
-                //myAgent.RequestDecision();
-                Invoke("Hero3Moveset", 0);
+
+                //Invoke("Hero3Moveset", 0);
                 break;
             case GameState.EnemiesTurn:
                 Invoke("EnemyMoveset", 1);
@@ -83,9 +81,9 @@ public class GameManager : MonoBehaviour
     }
 
     public void Hero3Moveset() {
-        //UnitManager.Instance.Player_Move();
-        myAgent.RequestDecision();
-        myAcedemy.EnvironmentStep();
+        UnitManager.Instance.Player_Move();
+        //myAgent.RequestDecision();
+        //myAcedemy.EnvironmentStep();
     }
 
     public void EnemyMoveset() {
