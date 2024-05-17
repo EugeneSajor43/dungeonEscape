@@ -23,15 +23,21 @@ public class UnitManager : MonoBehaviour {
     Stack<Vector3> heroPath = new Stack<Vector3>();
 
     [SerializeField] public Portal portal; //Prefab for Portal
+    private bool portal_spawned = false;
 
     public BaseEnemy SelectedEnemy;
 
         // Update is called once per frame
     void Update()
     {
-        if ((CanEscape))
+        if((CanEscape) && (!portal_spawned))
         {
-            Instantiate(portal, EscapeExit,  Quaternion.identity);
+            float Exit_X = EscapeExit.x;
+            float Exit_Y = EscapeExit.y;
+            Vector3 exit_vec = new Vector3(Exit_X, Exit_Y, 0.0f); 
+            Instantiate(portal, exit_vec, Quaternion.identity);
+            portal_spawned = true;
+            portal.transform.position = new Vector3(Exit_X, Exit_Y, 0.0f);
         }
     }
 

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -3150695748805000454}
   - component: {fileID: 6576791869055027172}
   - component: {fileID: 6537124029013343470}
+  - component: {fileID: -5848845222672951875}
   m_Layer: 0
   m_Name: Snorlax3
   m_TagString: Untagged
@@ -118,8 +119,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BrainParameters:
-    VectorObservationSize: 9
-    NumStackedVectorObservations: 1
+    VectorObservationSize: 297
+    NumStackedVectorObservations: 5
     m_ActionSpec:
       m_NumContinuousActions: 0
       BranchSizes: 05000000
@@ -154,3 +155,19 @@ MonoBehaviour:
   MaxStep: 0
   targetEnemy: {fileID: 1806223389849519627, guid: b44335a2b8004b3499d26c0a474c266d, type: 3}
   targetExit: {fileID: 2821143056486698546, guid: 4b37ce3f38410407fa624da29a20cba8, type: 3}
+--- !u!114 &-5848845222672951875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8799869882182364955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38b7cc1f5819445aa85e9a9b054552dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SensorName: VectorSensor
+  m_ObservationSize: 0
+  m_ObservationType: 1
+  m_ObservationStacks: 1

@@ -15,6 +15,12 @@ public class Hero3Agent : Agent
 
     [SerializeField] private Transform targetExit;
 
+    private const int width = 16;
+    private const int height = 9;
+
+    private int[,] EnemyGrid;
+    private int[,] ExitGrid;
+
     //public VoidEventChannelSO RequestMoveChannel;
 
     private bool is_UP_valid = false;
@@ -30,7 +36,8 @@ public class Hero3Agent : Agent
 
     public override void OnEpisodeBegin()
     {
-        //RequestMoveChannel.OnEventRaised += MakeMove;
+        Create_One_Hot_Grid();
+        Create_One_Hot_Grid2();
 
     }
 
@@ -58,18 +65,19 @@ public class Hero3Agent : Agent
 
     void OnDestroy()
     {
-            AddReward(-5f);
+            AddReward(-2f);
             EndEpisode();
             UnitManager.Instance.ResetGame();
     }
 
     public override void CollectObservations(VectorSensor sensor)
     {
-        print("CollectObservations");
+        //print("CollectObservations");
 
         BaseUnit Current_Hero = UnitManager.Instance.SelectedHeroes[2];
 
         sensor.AddObservation(Current_Hero.transform.position);
+        //sensor.AddOneHotObservation(EnemyGrid);
 
         if(UnitManager.Instance.SelectedEnemy != null)
         {
@@ -81,6 +89,22 @@ public class Hero3Agent : Agent
             //sensor.AddObservation(UnitManager.Instance.EscapeExit);
             sensor.AddObservation(targetExit.transform.position);
         }
+
+        for (int x = 0; x < width; x++)
+        {
+            for (int y = 0; y < height; y++)
+            {
+                sensor.AddOneHotObservation(EnemyGrid[x, y], 1);
+            }
+        }
+
+        for (int x = 0; x < width; x++)
+        {
+            for (int y = 0; y < height; y++)
+            {
+                sensor.AddOneHotObservation(ExitGrid[x, y], 1);
+            }
+        }
     }
 
     public override void WriteDiscreteActionMask(IDiscreteActionMask actionMask)
@@ -89,7 +113,7 @@ public class Hero3Agent : Agent
         
         //BaseUnit Current_Hero = UnitManager.Instance.SelectedHeroes[2];
 
-        print("WriteDiscreteActionMask");
+        //print("WriteDiscreteActionMask");
         Vector3 dummy_location = new Vector3(-1f, -1f, -1f);
         Vector3 hero1_Location = (UnitManager.Instance.SelectedHeroes[0] != null) ? (UnitManager.Instance.SelectedHeroes[0].transform.position) : (dummy_location);
         Vector3 hero2_Location = (UnitManager.Instance.SelectedHeroes[1] != null) ? (UnitManager.Instance.SelectedHeroes[1].transform.position) : (dummy_location);
@@ -185,7 +209,7 @@ public class Hero3Agent : Agent
 
     public override void OnActionReceived(ActionBuffers actions)
     {
-        print("OnActionReceived");
+        //print("OnActionReceived");
         int direction = actions.DiscreteActions[0];
 
 
@@ -216,28 +240,48 @@ public class Hero3Agent : Agent
         {
             if(UnitManager.Instance.SelectedEnemy.transform.position == Current_Hero.transform.position) 
             {
-                AddReward(1f);
+                AddReward(10f);
                 print("Player kills");
                 Destroy(UnitManager.Instance.SelectedEnemy.gameObject);
                 UnitManager.Instance.CanEscape = true;
                 UnitManager.Instance.SpawnExit();
+                Set_One_Hot_Grid_To_False();
             }
         }
 
+        if((UnitManager.Instance.SelectedEnemy != null))
+        {
+            BaseEnemy Current_Enemy = UnitManager.Instance.SelectedEnemy;
+            float enemyX = Current_Enemy.transform.position.x;
+            float enemyY = Current_Enemy.transform.position.y;
+            Set_One_Hot_Grid_To_True((int)enemyX, (int)enemyY);
+        }
+
+        float currentX = Current_Hero.transform.position.x;
+        float currentY = Current_Hero.transform.position.y;
+
+        print($"ACTION: {currentX}, {currentY}");
+        print($"THIS.TRANSFORM: {this.transform.position}");
+        Set_One_Hot_Grid_To_False();
+        Set_One_Hot_Grid_To_True((int)currentX, (int)currentY); //Hero
+
+
         if(UnitManager.Instance.CanEscape)
         {
-            float currentY = Current_Hero.transform.position.y;
-            float currentX = Current_Hero.transform.position.x;
-            print($"ACTION: {currentX}, {currentY}");
-            print($"THIS.TRANSFORM: {this.transform.position}");
             print($"ESCAPE EXIT: {UnitManager.Instance.EscapeExit}");
-            //BaseUnit Current_Hero = UnitManager.Instance.SelectedHeroes[2];
+            float ExitX = UnitManager.Instance.EscapeExit.x;
+            float ExitY = UnitManager.Instance.EscapeExit.y;
+            Set_One_Hot_Grid_To_False2();
+            Set_One_Hot_Grid_To_True2((int)ExitX, (int)ExitY);
+            Set_One_Hot_Grid_To_True2((int)currentX, (int)currentY);
 
+            //BaseUnit Current_Hero = UnitManager.Instance.SelectedHeroes[2];
             print($"ExitPortal: {UnitManager.Instance.portal.transform.position}");
         }
-        if((UnitManager.Instance.CanEscape) && (this.transform.position == UnitManager.Instance.EscapeExit)) 
+
+        if((UnitManager.Instance.CanEscape) && (Current_Hero.transform.position == UnitManager.Instance.EscapeExit)) 
         {
-            AddReward(3f);
+            AddReward(20f);
             print(Current_Hero.transform.position);
             Destroy(Current_Hero.gameObject);
             print("I Escaped");
@@ -250,7 +294,7 @@ public class Hero3Agent : Agent
             UnitManager.Instance.ResetGame();
         }
 
-        AddReward(-0.02f);
+        AddReward(-0.05f);
 
         //GameManager.Instance.ChangeState(GameState.EnemiesTurn);
         
@@ -278,28 +322,66 @@ public class Hero3Agent : Agent
         }
     }
 
-    public Vector2 CreateBooleanGrid()
+    public void Create_One_Hot_Grid()
     {
-        // Define the size of the grid
-        int width = 16;
-        int height = 9;
-
         // Create a 2D array of boolean values
-        bool[,] grid = new bool[width, height];
+        EnemyGrid = new int[width, height];
 
         // Populate the grid with boolean values (for demonstration, we'll set all values to true)
         for (int x = 0; x < width; x++)
         {
             for (int y = 0; y < height; y++)
             {
-                grid[x, y] = true; // Set all values to true (you can modify this as needed)
+                EnemyGrid[x, y] = 0; // Set all values to true (you can modify this as needed)
             }
         }
+    }
 
-        // Create a Vector2 to represent the size of the grid
-        Vector2 gridSize = new Vector2(width, height);
+    public void Set_One_Hot_Grid_To_False()
+    {
+        for (int x = 0; x < width; x++)
+        {
+            for (int y = 0; y < height; y++)
+            {
+                EnemyGrid[x, y] = 0;
+            }
+        }
+    }
 
-        return gridSize;
+    public void Set_One_Hot_Grid_To_True(int xIndex, int yIndex)
+    {
+        EnemyGrid[xIndex, yIndex] = 1;
+    }
+
+    public void Create_One_Hot_Grid2()
+    {
+        // Create a 2D array of boolean values
+        ExitGrid = new int[width, height];
+
+        // Populate the grid with boolean values (for demonstration, we'll set all values to true)
+        for (int x = 0; x < width; x++)
+        {
+            for (int y = 0; y < height; y++)
+            {
+                ExitGrid[x, y] = 0; // Set all values to true (you can modify this as needed)
+            }
+        }
+    }
+
+    public void Set_One_Hot_Grid_To_False2()
+    {
+        for (int x = 0; x < width; x++)
+        {
+            for (int y = 0; y < height; y++)
+            {
+                ExitGrid[x, y] = 0;
+            }
+        }
+    }
+
+    public void Set_One_Hot_Grid_To_True2(int xIndex, int yIndex)
+    {
+        ExitGrid[xIndex, yIndex] = 1;
     }
 
     public void MakeMove()
