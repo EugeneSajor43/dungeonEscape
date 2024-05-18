@@ -65,80 +65,32 @@
     <Analyzer Include="/Applications/Unity/Hub/Editor/2023.2.17f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="/Users/esajor/Desktop/ml-agents/com.unity.ml-agents/Runtime/Grpc/CommunicatorObjects/Command.cs">
-      <Link>Runtime/Grpc/CommunicatorObjects/Command.cs</Link>
-    </Compile>
-    <Compile Include="/Users/esajor/Desktop/ml-agents/com.unity.ml-agents/Runtime/Grpc/AssemblyInfo.cs">
-      <Link>Runtime/Grpc/AssemblyInfo.cs</Link>
-    </Compile>
-    <Compile Include="/Users/esajor/Desktop/ml-agents/com.unity.ml-agents/Runtime/Grpc/CommunicatorObjects/UnityToExternal.cs">
-      <Link>Runtime/Grpc/CommunicatorObjects/UnityToExternal.cs</Link>
-    </Compile>
-    <Compile Include="/Users/esajor/Desktop/ml-agents/com.unity.ml-agents/Runtime/Grpc/CommunicatorObjects/AgentInfo.cs">
-      <Link>Runtime/Grpc/CommunicatorObjects/AgentInfo.cs</Link>
-    </Compile>
-    <Compile Include="/Users/esajor/Desktop/ml-agents/com.unity.ml-agents/Runtime/Grpc/CommunicatorObjects/UnityRlInitializationOutput.cs">
-      <Link>Runtime/Grpc/CommunicatorObjects/UnityRlInitializationOutput.cs</Link>
-    </Compile>
-    <Compile Include="/Users/esajor/Desktop/ml-agents/com.unity.ml-agents/Runtime/Grpc/CommunicatorObjects/UnityInput.cs">
-      <Link>Runtime/Grpc/CommunicatorObjects/UnityInput.cs</Link>
-    </Compile>
-    <Compile Include="/Users/esajor/Desktop/ml-agents/com.unity.ml-agents/Runtime/Grpc/CommunicatorObjects/AgentInfoActionPair.cs">
-      <Link>Runtime/Grpc/CommunicatorObjects/AgentInfoActionPair.cs</Link>
-    </Compile>
-    <Compile Include="/Users/esajor/Desktop/ml-agents/com.unity.ml-agents/Runtime/Grpc/CommunicatorObjects/Header.cs">
-      <Link>Runtime/Grpc/CommunicatorObjects/Header.cs</Link>
-    </Compile>
-    <Compile Include="/Users/esajor/Desktop/ml-agents/com.unity.ml-agents/Runtime/Grpc/CommunicatorObjects/UnityOutput.cs">
-      <Link>Runtime/Grpc/CommunicatorObjects/UnityOutput.cs</Link>
-    </Compile>
-    <Compile Include="/Users/esajor/Desktop/ml-agents/com.unity.ml-agents/Runtime/Grpc/CommunicatorObjects/SpaceType.cs">
-      <Link>Runtime/Grpc/CommunicatorObjects/SpaceType.cs</Link>
-    </Compile>
-    <Compile Include="/Users/esajor/Desktop/ml-agents/com.unity.ml-agents/Runtime/Grpc/CommunicatorObjects/BrainParameters.cs">
-      <Link>Runtime/Grpc/CommunicatorObjects/BrainParameters.cs</Link>
-    </Compile>
-    <Compile Include="/Users/esajor/Desktop/ml-agents/com.unity.ml-agents/Runtime/Grpc/CommunicatorObjects/UnityRlInput.cs">
-      <Link>Runtime/Grpc/CommunicatorObjects/UnityRlInput.cs</Link>
-    </Compile>
-    <Compile Include="/Users/esajor/Desktop/ml-agents/com.unity.ml-agents/Runtime/Grpc/CommunicatorObjects/UnityToExternalGrpc.cs">
-      <Link>Runtime/Grpc/CommunicatorObjects/UnityToExternalGrpc.cs</Link>
-    </Compile>
-    <Compile Include="/Users/esajor/Desktop/ml-agents/com.unity.ml-agents/Runtime/Grpc/CommunicatorObjects/AgentAction.cs">
-      <Link>Runtime/Grpc/CommunicatorObjects/AgentAction.cs</Link>
-    </Compile>
-    <Compile Include="/Users/esajor/Desktop/ml-agents/com.unity.ml-agents/Runtime/Grpc/CommunicatorObjects/Capabilities.cs">
-      <Link>Runtime/Grpc/CommunicatorObjects/Capabilities.cs</Link>
-    </Compile>
-    <Compile Include="/Users/esajor/Desktop/ml-agents/com.unity.ml-agents/Runtime/Grpc/CommunicatorObjects/Observation.cs">
-      <Link>Runtime/Grpc/CommunicatorObjects/Observation.cs</Link>
-    </Compile>
-    <Compile Include="/Users/esajor/Desktop/ml-agents/com.unity.ml-agents/Runtime/Grpc/CommunicatorObjects/DemonstrationMeta.cs">
-      <Link>Runtime/Grpc/CommunicatorObjects/DemonstrationMeta.cs</Link>
-    </Compile>
-    <Compile Include="/Users/esajor/Desktop/ml-agents/com.unity.ml-agents/Runtime/Grpc/CommunicatorObjects/UnityRlOutput.cs">
-      <Link>Runtime/Grpc/CommunicatorObjects/UnityRlOutput.cs</Link>
-    </Compile>
-    <Compile Include="/Users/esajor/Desktop/ml-agents/com.unity.ml-agents/Runtime/Grpc/CommunicatorObjects/EngineConfiguration.cs">
-      <Link>Runtime/Grpc/CommunicatorObjects/EngineConfiguration.cs</Link>
-    </Compile>
-    <Compile Include="/Users/esajor/Desktop/ml-agents/com.unity.ml-agents/Runtime/Grpc/CommunicatorObjects/TrainingAnalytics.cs">
-      <Link>Runtime/Grpc/CommunicatorObjects/TrainingAnalytics.cs</Link>
-    </Compile>
-    <Compile Include="/Users/esajor/Desktop/ml-agents/com.unity.ml-agents/Runtime/Grpc/CommunicatorObjects/UnityRlInitializationInput.cs">
-      <Link>Runtime/Grpc/CommunicatorObjects/UnityRlInitializationInput.cs</Link>
-    </Compile>
-    <Compile Include="/Users/esajor/Desktop/ml-agents/com.unity.ml-agents/Runtime/Grpc/CommunicatorObjects/UnityMessage.cs">
-      <Link>Runtime/Grpc/CommunicatorObjects/UnityMessage.cs</Link>
-    </Compile>
-    <Compile Include="/Users/esajor/Desktop/ml-agents/com.unity.ml-agents/Runtime/Grpc/CommunicatorObjects/CustomResetParameters.cs">
-      <Link>Runtime/Grpc/CommunicatorObjects/CustomResetParameters.cs</Link>
-    </Compile>
+    <Compile Include="Library/PackageCache/com.unity.ml-agents@7a03145ae4/Runtime/Grpc/CommunicatorObjects/Command.cs" />
+    <Compile Include="Library/PackageCache/com.unity.ml-agents@7a03145ae4/Runtime/Grpc/AssemblyInfo.cs" />
+    <Compile Include="Library/PackageCache/com.unity.ml-agents@7a03145ae4/Runtime/Grpc/CommunicatorObjects/UnityToExternal.cs" />
+    <Compile Include="Library/PackageCache/com.unity.ml-agents@7a03145ae4/Runtime/Grpc/CommunicatorObjects/AgentInfo.cs" />
+    <Compile Include="Library/PackageCache/com.unity.ml-agents@7a03145ae4/Runtime/Grpc/CommunicatorObjects/UnityRlInitializationOutput.cs" />
+    <Compile Include="Library/PackageCache/com.unity.ml-agents@7a03145ae4/Runtime/Grpc/CommunicatorObjects/UnityInput.cs" />
+    <Compile Include="Library/PackageCache/com.unity.ml-agents@7a03145ae4/Runtime/Grpc/CommunicatorObjects/AgentInfoActionPair.cs" />
+    <Compile Include="Library/PackageCache/com.unity.ml-agents@7a03145ae4/Runtime/Grpc/CommunicatorObjects/Header.cs" />
+    <Compile Include="Library/PackageCache/com.unity.ml-agents@7a03145ae4/Runtime/Grpc/CommunicatorObjects/UnityOutput.cs" />
+    <Compile Include="Library/PackageCache/com.unity.ml-agents@7a03145ae4/Runtime/Grpc/CommunicatorObjects/SpaceType.cs" />
+    <Compile Include="Library/PackageCache/com.unity.ml-agents@7a03145ae4/Runtime/Grpc/CommunicatorObjects/BrainParameters.cs" />
+    <Compile Include="Library/PackageCache/com.unity.ml-agents@7a03145ae4/Runtime/Grpc/CommunicatorObjects/UnityRlInput.cs" />
+    <Compile Include="Library/PackageCache/com.unity.ml-agents@7a03145ae4/Runtime/Grpc/CommunicatorObjects/UnityToExternalGrpc.cs" />
+    <Compile Include="Library/PackageCache/com.unity.ml-agents@7a03145ae4/Runtime/Grpc/CommunicatorObjects/AgentAction.cs" />
+    <Compile Include="Library/PackageCache/com.unity.ml-agents@7a03145ae4/Runtime/Grpc/CommunicatorObjects/Capabilities.cs" />
+    <Compile Include="Library/PackageCache/com.unity.ml-agents@7a03145ae4/Runtime/Grpc/CommunicatorObjects/Observation.cs" />
+    <Compile Include="Library/PackageCache/com.unity.ml-agents@7a03145ae4/Runtime/Grpc/CommunicatorObjects/DemonstrationMeta.cs" />
+    <Compile Include="Library/PackageCache/com.unity.ml-agents@7a03145ae4/Runtime/Grpc/CommunicatorObjects/UnityRlOutput.cs" />
+    <Compile Include="Library/PackageCache/com.unity.ml-agents@7a03145ae4/Runtime/Grpc/CommunicatorObjects/EngineConfiguration.cs" />
+    <Compile Include="Library/PackageCache/com.unity.ml-agents@7a03145ae4/Runtime/Grpc/CommunicatorObjects/TrainingAnalytics.cs" />
+    <Compile Include="Library/PackageCache/com.unity.ml-agents@7a03145ae4/Runtime/Grpc/CommunicatorObjects/UnityRlInitializationInput.cs" />
+    <Compile Include="Library/PackageCache/com.unity.ml-agents@7a03145ae4/Runtime/Grpc/CommunicatorObjects/UnityMessage.cs" />
+    <Compile Include="Library/PackageCache/com.unity.ml-agents@7a03145ae4/Runtime/Grpc/CommunicatorObjects/CustomResetParameters.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="/Users/esajor/Desktop/ml-agents/com.unity.ml-agents/Runtime/Grpc/Unity.ML-Agents.CommunicatorObjects.asmdef">
-      <Link>Runtime/Grpc/Unity.ML-Agents.CommunicatorObjects.asmdef</Link>
-    </None>
+    <None Include="Library/PackageCache/com.unity.ml-agents@7a03145ae4/Runtime/Grpc/Unity.ML-Agents.CommunicatorObjects.asmdef" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -606,7 +558,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="System.IO.Abstractions">
-      <HintPath>/Users/esajor/Desktop/ml-agents/com.unity.ml-agents/Plugins/System.IO.Abstractions.dll</HintPath>
+      <HintPath>Library/PackageCache/com.unity.ml-agents@7a03145ae4/Plugins/System.IO.Abstractions.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.VisualScripting.YamlDotNet">
@@ -654,7 +606,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="Grpc.Core">
-      <HintPath>/Users/esajor/Desktop/ml-agents/com.unity.ml-agents/Plugins/ProtoBuffer/Grpc.Core.dll</HintPath>
+      <HintPath>Library/PackageCache/com.unity.ml-agents@7a03145ae4/Plugins/ProtoBuffer/Grpc.Core.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="NuGetForUnity.PluginAPI">
@@ -666,7 +618,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="System.IO.Abstractions.TestingHelpers">
-      <HintPath>/Users/esajor/Desktop/ml-agents/com.unity.ml-agents/Plugins/System.IO.Abstractions.TestingHelpers.dll</HintPath>
+      <HintPath>Library/PackageCache/com.unity.ml-agents@7a03145ae4/Plugins/System.IO.Abstractions.TestingHelpers.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json">

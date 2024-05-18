@@ -572,7 +572,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="System.IO.Abstractions">
-      <HintPath>/Users/esajor/Desktop/ml-agents/com.unity.ml-agents/Plugins/System.IO.Abstractions.dll</HintPath>
+      <HintPath>Library/PackageCache/com.unity.ml-agents@7a03145ae4/Plugins/System.IO.Abstractions.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.VisualScripting.YamlDotNet">
@@ -620,7 +620,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="Grpc.Core">
-      <HintPath>/Users/esajor/Desktop/ml-agents/com.unity.ml-agents/Plugins/ProtoBuffer/Grpc.Core.dll</HintPath>
+      <HintPath>Library/PackageCache/com.unity.ml-agents@7a03145ae4/Plugins/ProtoBuffer/Grpc.Core.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="NuGetForUnity.PluginAPI">
@@ -632,7 +632,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="System.IO.Abstractions.TestingHelpers">
-      <HintPath>/Users/esajor/Desktop/ml-agents/com.unity.ml-agents/Plugins/System.IO.Abstractions.TestingHelpers.dll</HintPath>
+      <HintPath>Library/PackageCache/com.unity.ml-agents@7a03145ae4/Plugins/System.IO.Abstractions.TestingHelpers.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json">

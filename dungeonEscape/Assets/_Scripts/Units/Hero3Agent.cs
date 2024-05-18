@@ -11,9 +11,9 @@ using UnityEngine.Events;
 public class Hero3Agent : Agent
 {
 
-    [SerializeField] private Transform targetEnemy;
+    [SerializeField] private Transform targetEnemy1;
 
-    [SerializeField] private Transform targetExit;
+    [SerializeField] private Transform targetEnemy2;
 
     private const int width = 16;
     private const int height = 9;
@@ -28,16 +28,30 @@ public class Hero3Agent : Agent
     private bool is_RIGHT_valid = false;
     private bool is_LEFT_valid = false;
 
+    private Vector3 previous_move1;
+    private Vector3 previous_move2;
+    private Vector3 previous_move3;
+    private Vector3 previous_move4;
+
+    //VectorSensorComponent m_GoalSensor;
+
+    private int number_of_moves;
+
     //BaseUnit Current_Hero = UnitManager.Instance.SelectedHeroes[2];
     
 
-    // Start is called before the first frame update
+    // Start is called before the first frame update #f3007f
 
 
     public override void OnEpisodeBegin()
     {
         Create_One_Hot_Grid();
         Create_One_Hot_Grid2();
+        previous_move1 = new Vector3(-1f, -1f, -1f);
+        previous_move2 = new Vector3(-1f, -1f, -1f);
+        previous_move3 = new Vector3(-1f, -1f, -1f);
+        previous_move4 = new Vector3(-1f, -1f, -1f);
+        number_of_moves = 0;
 
     }
 
@@ -53,6 +67,15 @@ public class Hero3Agent : Agent
         Academy.Instance.AutomaticSteppingEnabled = false;
     }
 
+    private void Update()
+    {
+        if(number_of_moves > 1000)
+        {
+            this.EndEpisode();
+            UnitManager.Instance.ResetGame();
+        }
+    }
+
     private void FixedUpdate()
     {
         Academy.Instance.EnvironmentStep();
@@ -61,7 +84,6 @@ public class Hero3Agent : Agent
             MakeMove();
         }
     }
-
 
     void OnDestroy()
     {
@@ -81,13 +103,12 @@ public class Hero3Agent : Agent
 
         if(UnitManager.Instance.SelectedEnemy != null)
         {
-            sensor.AddObservation(targetEnemy.transform.position);
+            sensor.AddObservation(UnitManager.Instance.SelectedEnemy.transform.position);
         }
-
-        if(UnitManager.Instance.CanEscape)
+        else if(UnitManager.Instance.CanEscape)
         {
             //sensor.AddObservation(UnitManager.Instance.EscapeExit);
-            sensor.AddObservation(targetExit.transform.position);
+            sensor.AddObservation(UnitManager.Instance.EscapeExit);
         }
 
         for (int x = 0; x < width; x++)
@@ -98,13 +119,13 @@ public class Hero3Agent : Agent
             }
         }
 
-        for (int x = 0; x < width; x++)
+/*         for (int x = 0; x < width; x++)
         {
             for (int y = 0; y < height; y++)
             {
                 sensor.AddOneHotObservation(ExitGrid[x, y], 1);
             }
-        }
+        } */
     }
 
     public override void WriteDiscreteActionMask(IDiscreteActionMask actionMask)
@@ -211,9 +232,13 @@ public class Hero3Agent : Agent
     {
         //print("OnActionReceived");
         int direction = actions.DiscreteActions[0];
-
-
+        
         BaseUnit Current_Hero = UnitManager.Instance.SelectedHeroes[2];
+        previous_move4 = previous_move3;
+        previous_move3 = previous_move2;
+        previous_move2 = previous_move1;
+        previous_move1 = Current_Hero.transform.position;
+
 
         if((direction == 0))
         {
@@ -234,54 +259,117 @@ public class Hero3Agent : Agent
         if((direction == 4))
         {
             this.transform.position = this.transform.position;
-        }
-        
-        if(UnitManager.Instance.SelectedEnemy != null)
-        {
-            if(UnitManager.Instance.SelectedEnemy.transform.position == Current_Hero.transform.position) 
-            {
-                AddReward(10f);
-                print("Player kills");
-                Destroy(UnitManager.Instance.SelectedEnemy.gameObject);
-                UnitManager.Instance.CanEscape = true;
-                UnitManager.Instance.SpawnExit();
-                Set_One_Hot_Grid_To_False();
-            }
-        }
-
-        if((UnitManager.Instance.SelectedEnemy != null))
-        {
-            BaseEnemy Current_Enemy = UnitManager.Instance.SelectedEnemy;
-            float enemyX = Current_Enemy.transform.position.x;
-            float enemyY = Current_Enemy.transform.position.y;
-            Set_One_Hot_Grid_To_True((int)enemyX, (int)enemyY);
+            AddReward(-0.5f);
         }
 
         float currentX = Current_Hero.transform.position.x;
         float currentY = Current_Hero.transform.position.y;
 
-        print($"ACTION: {currentX}, {currentY}");
-        print($"THIS.TRANSFORM: {this.transform.position}");
-        Set_One_Hot_Grid_To_False();
-        Set_One_Hot_Grid_To_True((int)currentX, (int)currentY); //Hero
+        //print($"unt: {UnitManager.Instance.SelectedEnemy.transform.position} --- Enemy1: {targetEnemy1.transform.position}");
+        
+        if(UnitManager.Instance.SelectedEnemy != null)
+        {
+            if(UnitManager.Instance.SelectedEnemy.transform.position == Current_Hero.transform.position)
+            //if(Current_Hero.transform.position == targetEnemy1.transform.position)
+            {
+                AddReward(20f);
+                print("Player kills");
+                Destroy(UnitManager.Instance.SelectedEnemy.gameObject);
+                UnitManager.Instance.CanEscape = true;
+                UnitManager.Instance.SpawnExit();
+            }
+            else if(Current_Hero.transform.position == previous_move1)
+            {
+                AddReward(-0.8f);
+                //print("-1f Penalty");
+            }
+            else if(Current_Hero.transform.position == previous_move2)
+            {
+                AddReward(-0.6f);
+                //print("move2 Penalty");
+            }
+            else if(Current_Hero.transform.position == previous_move3)
+            {
+                AddReward(-0.5f);
+                //print("move3 Penalty");
+            }
+            else if(Current_Hero.transform.position == previous_move4)
+            {
+                AddReward(-0.5f);
+                //print("move4 Penalty");
+            }
 
+            BaseEnemy Current_Enemy = UnitManager.Instance.SelectedEnemy;
 
+            float enemyX = Current_Enemy.transform.position.x;
+            float enemyY = Current_Enemy.transform.position.y;
+
+            Set_One_Hot_Grid_To_False();
+            Set_One_Hot_Grid_To_True((int)enemyX, (int)enemyY); //Enemy
+            Set_One_Hot_Grid_To_True((int)currentX, (int)currentY); //Hero
+
+            //print($"ACTION: {currentX}, {currentY}");
+            //print($"THIS.TRANSFORM: {this.transform.position}");
+        }
+        
         if(UnitManager.Instance.CanEscape)
         {
-            print($"ESCAPE EXIT: {UnitManager.Instance.EscapeExit}");
+            if(Current_Hero.transform.position == UnitManager.Instance.EscapeExit) //targetEnemy2.transform.position) 
+            {
+                AddReward(25f);
+                print(Current_Hero.transform.position);
+                Destroy(Current_Hero.gameObject);
+                print("I Escaped");
+                UnitManager.Instance.EscapeCount += 1;
+                if (UnitManager.Instance.EscapeCount + UnitManager.Instance.DeadHeroes == 3) 
+                {
+                    this.EndEpisode();
+                    UnitManager.Instance.ResetGame();
+                }
+                this.EndEpisode();
+                UnitManager.Instance.ResetGame();
+            }
+            else if(Current_Hero.transform.position == previous_move1)
+            {
+                AddReward(-0.8f);
+                //print("-1f Penalty");
+            }
+            else if(Current_Hero.transform.position == previous_move2)
+            {
+                AddReward(-0.6f);
+                //print("move2 Penalty");
+            }
+            else if(Current_Hero.transform.position == previous_move3)
+            {
+                AddReward(-0.5f);
+                //print("move3 Penalty");
+            }
+            else if(Current_Hero.transform.position == previous_move4)
+            {
+                AddReward(-0.5f);
+                //print("move4 Penalty");
+            }
+
             float ExitX = UnitManager.Instance.EscapeExit.x;
             float ExitY = UnitManager.Instance.EscapeExit.y;
-            Set_One_Hot_Grid_To_False2();
-            Set_One_Hot_Grid_To_True2((int)ExitX, (int)ExitY);
-            Set_One_Hot_Grid_To_True2((int)currentX, (int)currentY);
+            Set_One_Hot_Grid_To_False();
+            Set_One_Hot_Grid_To_True((int)ExitX, (int)ExitY);
+            Set_One_Hot_Grid_To_True((int)currentX, (int)currentY);
 
-            //BaseUnit Current_Hero = UnitManager.Instance.SelectedHeroes[2];
-            print($"ExitPortal: {UnitManager.Instance.portal.transform.position}");
+            //print($"ESCAPE EXIT: {UnitManager.Instance.EscapeExit}");
+            //print($"ExitPortal: {UnitManager.Instance.portal.transform.position}");
+            //print($"Enemy2 Portal Position {targetEnemy2.transform.position}");
         }
 
-        if((UnitManager.Instance.CanEscape) && (Current_Hero.transform.position == UnitManager.Instance.EscapeExit)) 
+        AddReward(-0.01f);
+                
+        number_of_moves++;
+        //print($"Number of moves: {number_of_moves}");
+    }
+
+/*         if((UnitManager.Instance.CanEscape) && ) 
         {
-            AddReward(20f);
+            AddReward(25f);
             print(Current_Hero.transform.position);
             Destroy(Current_Hero.gameObject);
             print("I Escaped");
@@ -293,13 +381,8 @@ public class Hero3Agent : Agent
             this.EndEpisode();
             UnitManager.Instance.ResetGame();
         }
-
-        AddReward(-0.05f);
-
         //GameManager.Instance.ChangeState(GameState.EnemiesTurn);
-        
-
-    }
+    } */
 
     public override void Heuristic(in ActionBuffers actionsOut)
     {
