@@ -34,6 +34,7 @@ public class Hero3Agent : Agent
     private Vector3 previous_move4;
 
     //VectorSensorComponent m_GoalSensor;
+    Vector3 dummy_location = new Vector3(-1f, -1f, -1f);
 
     private int number_of_moves;
 
@@ -63,7 +64,7 @@ public class Hero3Agent : Agent
 
     private void Start()
     {
-        print("Start");
+        //print("Start");
         Academy.Instance.AutomaticSteppingEnabled = false;
     }
 
@@ -350,13 +351,18 @@ public class Hero3Agent : Agent
                 //print("move4 Penalty");
             }
 
+            //print($"ESCAPE EXIT: {UnitManager.Instance.EscapeExit}");
             float ExitX = UnitManager.Instance.EscapeExit.x;
             float ExitY = UnitManager.Instance.EscapeExit.y;
             Set_One_Hot_Grid_To_False();
-            Set_One_Hot_Grid_To_True((int)ExitX, (int)ExitY);
+
+            if(UnitManager.Instance.EscapeExit != dummy_location)
+            {
+                Set_One_Hot_Grid_To_True((int)ExitX, (int)ExitY);
+            }
             Set_One_Hot_Grid_To_True((int)currentX, (int)currentY);
 
-            //print($"ESCAPE EXIT: {UnitManager.Instance.EscapeExit}");
+            
             //print($"ExitPortal: {UnitManager.Instance.portal.transform.position}");
             //print($"Enemy2 Portal Position {targetEnemy2.transform.position}");
         }
@@ -364,7 +370,7 @@ public class Hero3Agent : Agent
         AddReward(-0.01f);
                 
         number_of_moves++;
-        //print($"Number of moves: {number_of_moves}");
+        print($"Number of moves: {number_of_moves}");
     }
 
 /*         if((UnitManager.Instance.CanEscape) && ) 

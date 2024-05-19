@@ -277,14 +277,16 @@ public class GridManager : MonoBehaviour {
                 {
                     randomTile = Random.Range(0, 12) == 3 ? _mountainTile : _grassTile;
                 }
-                else if(lesson_num == 10)
+
+/*                 else if(lesson_num == 10)
                 {
                     randomTile = Random.Range(0, 9) == 3 ? _mountainTile : _grassTile;
                 }
                 else if(lesson_num == 11)
                 {
                     randomTile = Random.Range(0, 6) == 3 ? _mountainTile : _grassTile;
-                }
+                } */
+
                 var spawnedTile = Instantiate(randomTile, new Vector3(x, y), Quaternion.identity);
                 spawnedTile.name = $"Tile {x} {y}";
                 spawnedTile.gridLocation = new Vector2Int(x, y);    
