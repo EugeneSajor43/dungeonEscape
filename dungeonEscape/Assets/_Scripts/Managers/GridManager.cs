@@ -16,7 +16,7 @@ public class GridManager : MonoBehaviour {
 
     private Dictionary<Vector2, Tile> _tiles;
 
-    public int limit = 5;
+    public int limit = 9;
 
     void Awake() {
         Instance = this;
@@ -49,7 +49,7 @@ public class GridManager : MonoBehaviour {
     public void GenerateGrid()
     {
 
-        int lesson_num = (int)Academy.Instance.EnvironmentParameters.GetWithDefault("lesson_number", limit);
+        int lesson_num = 9;//(int)Academy.Instance.EnvironmentParameters.GetWithDefault("lesson_number", limit);
         _tiles = new Dictionary<Vector2, Tile>();
         int random_orientation = Random.Range(0, 2);
 
