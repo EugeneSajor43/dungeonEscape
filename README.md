@@ -109,7 +109,7 @@ Install Unity using Version 2023.2.17f1
 
 ## AI Techniques
 
-- **A* Algorithm:** Pathfinding and shortest path calculation for knights.
+- **A Star Search Algorithm:** Pathfinding and shortest path calculation for knights.
 - **Monte Carlo Search Trees:** Simulation-based decision-making for knights.
 - **Minimax Algorithm:** Adversarial strategy for knights and dragon.
 - **Nash Equilibrium:** Collaborative strategy for knights.
