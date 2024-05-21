@@ -113,6 +113,15 @@ Install Unity using Version 2023.2.17f1
 
 ## 6. Set the slider in Snorelax2 prefab
 1. Locate the Snorelax2 prefab in **Prefabs -> Units -> Heroes**.
+
+
+Locations of Algorithms:
+Anthony:
+MonteCarloSearch, A* Algorithms are in Assets -> _scripts -> AO Algo
+Fourcan: 
+A*, Hero Nash + Minimax, Enemy Minimax Algorithms are in Assets -> _Scripts -> Units
+Eugene:
+
 2. Set the slider to **5**.
                                 
 
