@@ -50,7 +50,7 @@ Install Unity using Version 2023.2.17f1
 
 - **Escape the Dungeon:** The primary objective for each knight agent is to escape the dungeon by acquiring a key and unlocking the exit door.
 - **Avoid or Defeat the Dragon:** Knights can choose to defeat the dragon to make their escape easier or avoid it entirely.
-- 
+  
 ## Team Member Roles
 
 ### Anthony Williams
@@ -116,4 +116,4 @@ Install Unity using Version 2023.2.17f1
 - **Reinforcement Learning:** Adaptive learning and behavior modeling for knights.
                                 
 
-By Anthony Williams, Fourcan Adullah and Eugene Sajor
+By Anthony Williams, Fourcan Adullah, and Eugene Sajor
