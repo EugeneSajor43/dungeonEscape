@@ -114,25 +114,6 @@ Install Unity using Version 2023.2.17f1
 - **Minimax Algorithm:** Adversarial strategy for knights and dragon.
 - **Nash Equilibrium:** Collaborative strategy for knights.
 - **Reinforcement Learning:** Adaptive learning and behavior modeling for knights.
-
-## Development Tools
-
-- **Unity:** Game development and environment design.
-- **Machine Learning Libraries:** For implementing AI strategies.
-- **Visualization Tools:** For creating metrics and performance graphs.
-
-## Running the Game
-
-1. **Setup:** Open the project in Unity.
-2. **Configuration:** Ensure all AI scripts are correctly assigned to the knight and dragon agents.
-3. **Execution:** Run the game to observe knight agents attempting to escape the dungeon.
-4. **Analysis:** Use visualization metrics to evaluate agent performance.
-
-## Contact Information
-
-For any questions or further information, please reach out to the respective team members via their provided contact details within the project documentation.
-
-
                                 
 
 By Anthony Williams, Fourcan Adullah and Eugene Sajor
