@@ -1,0 +1,1503 @@
+fileFormatVersion: 2
+guid: ca5c5e7b1618241ee94a0020fd51faa1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6895427435001393224
+    second: training dummy sheet_0
+  - first:
+      213: 7477354284185001613
+    second: training dummy sheet_1
+  - first:
+      213: -4382799059217896006
+    second: training dummy sheet_2
+  - first:
+      213: -8284261547116826193
+    second: training dummy sheet_3
+  - first:
+      213: -1436008675117537150
+    second: training dummy sheet_4
+  - first:
+      213: 7351037496365574191
+    second: training dummy sheet_5
+  - first:
+      213: -6863541628071922105
+    second: training dummy sheet_6
+  - first:
+      213: -5856699949544478681
+    second: training dummy sheet_7
+  - first:
+      213: 6016640320727876923
+    second: training dummy sheet_8
+  - first:
+      213: 3611810349089133502
+    second: training dummy sheet_9
+  - first:
+      213: -8111335927237062912
+    second: training dummy sheet_10
+  - first:
+      213: -2313103439092166143
+    second: training dummy sheet_11
+  - first:
+      213: -6254836743914750826
+    second: training dummy sheet_12
+  - first:
+      213: 7780657352989194032
+    second: training dummy sheet_13
+  - first:
+      213: 4525377857497864030
+    second: training dummy sheet_14
+  - first:
+      213: -2316059399958783928
+    second: training dummy sheet_15
+  - first:
+      213: -8411653297340181350
+    second: training dummy sheet_16
+  - first:
+      213: -9148809349886791264
+    second: training dummy sheet_17
+  - first:
+      213: -5147677979626693804
+    second: training dummy sheet_18
+  - first:
+      213: 8573278142188298963
+    second: training dummy sheet_19
+  - first:
+      213: 7287866656255743771
+    second: training dummy sheet_20
+  - first:
+      213: -6167293563098912404
+    second: training dummy sheet_21
+  - first:
+      213: -8123794975726278710
+    second: training dummy sheet_22
+  - first:
+      213: -7422472551832102154
+    second: training dummy sheet_23
+  - first:
+      213: 8852161806594624064
+    second: training dummy sheet_24
+  - first:
+      213: 3328950360887660701
+    second: training dummy sheet_25
+  - first:
+      213: 2713466891744861927
+    second: training dummy sheet_26
+  - first:
+      213: 5256289333991147762
+    second: training dummy sheet_27
+  - first:
+      213: -581666638785167479
+    second: training dummy sheet_28
+  - first:
+      213: 4496992228407150384
+    second: training dummy sheet_29
+  - first:
+      213: 4389772616177245057
+    second: training dummy sheet_30
+  - first:
+      213: -6391822691180456891
+    second: training dummy sheet_31
+  - first:
+      213: -7705441651200818143
+    second: training dummy sheet_32
+  - first:
+      213: -2966501934857826637
+    second: training dummy sheet_33
+  - first:
+      213: -8286372332353161832
+    second: training dummy sheet_34
+  - first:
+      213: 942147667930503181
+    second: training dummy sheet_35
+  - first:
+      213: -9046920255059766597
+    second: training dummy sheet_36
+  - first:
+      213: 520499955001160666
+    second: training dummy sheet_37
+  - first:
+      213: 2265921525501801048
+    second: training dummy sheet_38
+  - first:
+      213: 5458355421012590903
+    second: training dummy sheet_39
+  - first:
+      213: -8188943730032513186
+    second: training dummy sheet_40
+  - first:
+      213: -6083037052604419397
+    second: training dummy sheet_41
+  - first:
+      213: 8513999491158743701
+    second: training dummy sheet_42
+  - first:
+      213: 4668959674052235245
+    second: training dummy sheet_43
+  - first:
+      213: -5121372437565766846
+    second: training dummy sheet_44
+  - first:
+      213: -4763161894357964158
+    second: training dummy sheet_45
+  - first:
+      213: -1048330422682341071
+    second: training dummy sheet_46
+  - first:
+      213: -1406001761707743634
+    second: training dummy sheet_47
+  - first:
+      213: 5573577755444719817
+    second: training dummy sheet_48
+  - first:
+      213: 36025616602879497
+    second: training dummy sheet_49
+  - first:
+      213: -126615992039028412
+    second: training dummy sheet_50
+  - first:
+      213: -937046263822636728
+    second: training dummy sheet_51
+  - first:
+      213: -410651104970508558
+    second: training dummy sheet_52
+  - first:
+      213: 438473192572649721
+    second: training dummy sheet_53
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: training dummy sheet_0
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 1003
+        width: 100
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bf424a08458e40a0800000000000000
+      internalID: -6895427435001393224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: training dummy sheet_1
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 1003
+        width: 100
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8e9790da16e4c760800000000000000
+      internalID: 7477354284185001613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: training dummy sheet_2
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 1003
+        width: 100
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abda6690a7b2d23c0800000000000000
+      internalID: -4382799059217896006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: training dummy sheet_3
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 1003
+        width: 105
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa17ca9c304680d80800000000000000
+      internalID: -8284261547116826193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: training dummy sheet_4
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 1003
+        width: 103
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2886d31e7b5421ce0800000000000000
+      internalID: -1436008675117537150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: training dummy sheet_5
+      rect:
+        serializedVersion: 2
+        x: 1032
+        y: 1003
+        width: 94
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f28627dc7a1240660800000000000000
+      internalID: 7351037496365574191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: training dummy sheet_6
+      rect:
+        serializedVersion: 2
+        x: 1229
+        y: 1002
+        width: 97
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 746baadf04dcfb0a0800000000000000
+      internalID: -6863541628071922105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: training dummy sheet_7
+      rect:
+        serializedVersion: 2
+        x: 1471
+        y: 1010
+        width: 99
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7286a5f0d62d8bea0800000000000000
+      internalID: -5856699949544478681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: training dummy sheet_8
+      rect:
+        serializedVersion: 2
+        x: 1640
+        y: 1002
+        width: 93
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3507428e766f7350800000000000000
+      internalID: 6016640320727876923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: training dummy sheet_9
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 803
+        width: 100
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb39985506abf1230800000000000000
+      internalID: 3611810349089133502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: training dummy sheet_10
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 803
+        width: 100
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00fcb2b23febe6f80800000000000000
+      internalID: -8111335927237062912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: training dummy sheet_11
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 803
+        width: 100
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1025d207da436efd0800000000000000
+      internalID: -2313103439092166143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: training dummy sheet_12
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 803
+        width: 105
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69c76e6fe1b5239a0800000000000000
+      internalID: -6254836743914750826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: training dummy sheet_13
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 803
+        width: 103
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 037b3fb83a27afb60800000000000000
+      internalID: 7780657352989194032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: training dummy sheet_14
+      rect:
+        serializedVersion: 2
+        x: 1032
+        y: 803
+        width: 94
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5714965f2f5dce30800000000000000
+      internalID: 4525377857497864030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: training dummy sheet_15
+      rect:
+        serializedVersion: 2
+        x: 1257
+        y: 803
+        width: 95
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84890ca2f34bbdfd0800000000000000
+      internalID: -2316059399958783928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: training dummy sheet_16
+      rect:
+        serializedVersion: 2
+        x: 1457
+        y: 803
+        width: 98
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a949b4694edc34b80800000000000000
+      internalID: -8411653297340181350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: training dummy sheet_17
+      rect:
+        serializedVersion: 2
+        x: 1658
+        y: 803
+        width: 100
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a1b9366e56e80180800000000000000
+      internalID: -9148809349886791264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: training dummy sheet_18
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 603
+        width: 95
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45b104ea626cf88b0800000000000000
+      internalID: -5147677979626693804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: training dummy sheet_19
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 603
+        width: 98
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d221c11c076af670800000000000000
+      internalID: 8573278142188298963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: training dummy sheet_20
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 603
+        width: 99
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1799807c14b32560800000000000000
+      internalID: 7287866656255743771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: training dummy sheet_21
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 603
+        width: 105
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c69afe91e2f596aa0800000000000000
+      internalID: -6167293563098912404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: training dummy sheet_22
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 603
+        width: 103
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac76bb3e28b724f80800000000000000
+      internalID: -8123794975726278710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: training dummy sheet_23
+      rect:
+        serializedVersion: 2
+        x: 1032
+        y: 603
+        width: 94
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fad5f04a841ef890800000000000000
+      internalID: -7422472551832102154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: training dummy sheet_24
+      rect:
+        serializedVersion: 2
+        x: 1255
+        y: 603
+        width: 98
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04a4a58234239da70800000000000000
+      internalID: 8852161806594624064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: training dummy sheet_25
+      rect:
+        serializedVersion: 2
+        x: 1456
+        y: 603
+        width: 97
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d901e9737bec23e20800000000000000
+      internalID: 3328950360887660701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: training dummy sheet_26
+      rect:
+        serializedVersion: 2
+        x: 1658
+        y: 603
+        width: 96
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ee5c30f2cb28a520800000000000000
+      internalID: 2713466891744861927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: training dummy sheet_27
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 403
+        width: 100
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f8873ddc4712f840800000000000000
+      internalID: 5256289333991147762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: training dummy sheet_28
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 403
+        width: 100
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98fb38916418de7f0800000000000000
+      internalID: -581666638785167479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: training dummy sheet_29
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 403
+        width: 100
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03786eb0b96886e30800000000000000
+      internalID: 4496992228407150384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: training dummy sheet_30
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 403
+        width: 99
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18b5bf7bfea9bec30800000000000000
+      internalID: 4389772616177245057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: training dummy sheet_31
+      rect:
+        serializedVersion: 2
+        x: 862
+        y: 406
+        width: 100
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54458e0b02fab47a0800000000000000
+      internalID: -6391822691180456891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: training dummy sheet_32
+      rect:
+        serializedVersion: 2
+        x: 1060
+        y: 406
+        width: 100
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1240da6b4a5c01590800000000000000
+      internalID: -7705441651200818143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: training dummy sheet_33
+      rect:
+        serializedVersion: 2
+        x: 1255
+        y: 403
+        width: 98
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3be4a4b153ed4d6d0800000000000000
+      internalID: -2966501934857826637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: training dummy sheet_34
+      rect:
+        serializedVersion: 2
+        x: 1456
+        y: 403
+        width: 97
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 895f67d4444e00d80800000000000000
+      internalID: -8286372332353161832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: training dummy sheet_35
+      rect:
+        serializedVersion: 2
+        x: 1658
+        y: 403
+        width: 96
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d08d5f0ff4e231d00800000000000000
+      internalID: 942147667930503181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: training dummy sheet_36
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 203
+        width: 100
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb250ede5f1e27280800000000000000
+      internalID: -9046920255059766597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: training dummy sheet_37
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 203
+        width: 98
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad3737b83ff293700800000000000000
+      internalID: 520499955001160666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: training dummy sheet_38
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 203
+        width: 100
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85232704f9b227f10800000000000000
+      internalID: 2265921525501801048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: training dummy sheet_39
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 203
+        width: 99
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7318847f559ffbb40800000000000000
+      internalID: 5458355421012590903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: training dummy sheet_40
+      rect:
+        serializedVersion: 2
+        x: 862
+        y: 206
+        width: 100
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5fefbd70170b5e80800000000000000
+      internalID: -8188943730032513186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: training dummy sheet_41
+      rect:
+        serializedVersion: 2
+        x: 1060
+        y: 206
+        width: 100
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb279fba706b49ba0800000000000000
+      internalID: -6083037052604419397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: training dummy sheet_42
+      rect:
+        serializedVersion: 2
+        x: 1255
+        y: 203
+        width: 98
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59a9f589d6dc72670800000000000000
+      internalID: 8513999491158743701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: training dummy sheet_43
+      rect:
+        serializedVersion: 2
+        x: 1456
+        y: 203
+        width: 97
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: defc18a161a7bc040800000000000000
+      internalID: 4668959674052235245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: training dummy sheet_44
+      rect:
+        serializedVersion: 2
+        x: 1658
+        y: 203
+        width: 96
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2438a68f6ea3de8b0800000000000000
+      internalID: -5121372437565766846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: training dummy sheet_45
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 3
+        width: 119
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28aed1f4e79d5edb0800000000000000
+      internalID: -4763161894357964158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: training dummy sheet_46
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 3
+        width: 95
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 131b8cce8059371f0800000000000000
+      internalID: -1048330422682341071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: training dummy sheet_47
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 3
+        width: 100
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6626d7d8d0ec7ce0800000000000000
+      internalID: -1406001761707743634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: training dummy sheet_48
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 3
+        width: 99
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c03d414073595d40800000000000000
+      internalID: 5573577755444719817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: training dummy sheet_49
+      rect:
+        serializedVersion: 2
+        x: 862
+        y: 6
+        width: 100
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 906dd608b1dff7000800000000000000
+      internalID: 36025616602879497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: training dummy sheet_50
+      rect:
+        serializedVersion: 2
+        x: 1060
+        y: 6
+        width: 100
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44941a31d6b2e3ef0800000000000000
+      internalID: -126615992039028412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: training dummy sheet_51
+      rect:
+        serializedVersion: 2
+        x: 1255
+        y: 3
+        width: 98
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 849aeb24361fef2f0800000000000000
+      internalID: -937046263822636728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: training dummy sheet_52
+      rect:
+        serializedVersion: 2
+        x: 1456
+        y: 3
+        width: 97
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f67c99eef21d4af0800000000000000
+      internalID: -410651104970508558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: training dummy sheet_53
+      rect:
+        serializedVersion: 2
+        x: 1658
+        y: 3
+        width: 96
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f003d6ab05c51600800000000000000
+      internalID: 438473192572649721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 3247bf7a68e474792b7c872b06dda03e
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      training dummy sheet_0: -6895427435001393224
+      training dummy sheet_1: 7477354284185001613
+      training dummy sheet_10: -8111335927237062912
+      training dummy sheet_11: -2313103439092166143
+      training dummy sheet_12: -6254836743914750826
+      training dummy sheet_13: 7780657352989194032
+      training dummy sheet_14: 4525377857497864030
+      training dummy sheet_15: -2316059399958783928
+      training dummy sheet_16: -8411653297340181350
+      training dummy sheet_17: -9148809349886791264
+      training dummy sheet_18: -5147677979626693804
+      training dummy sheet_19: 8573278142188298963
+      training dummy sheet_2: -4382799059217896006
+      training dummy sheet_20: 7287866656255743771
+      training dummy sheet_21: -6167293563098912404
+      training dummy sheet_22: -8123794975726278710
+      training dummy sheet_23: -7422472551832102154
+      training dummy sheet_24: 8852161806594624064
+      training dummy sheet_25: 3328950360887660701
+      training dummy sheet_26: 2713466891744861927
+      training dummy sheet_27: 5256289333991147762
+      training dummy sheet_28: -581666638785167479
+      training dummy sheet_29: 4496992228407150384
+      training dummy sheet_3: -8284261547116826193
+      training dummy sheet_30: 4389772616177245057
+      training dummy sheet_31: -6391822691180456891
+      training dummy sheet_32: -7705441651200818143
+      training dummy sheet_33: -2966501934857826637
+      training dummy sheet_34: -8286372332353161832
+      training dummy sheet_35: 942147667930503181
+      training dummy sheet_36: -9046920255059766597
+      training dummy sheet_37: 520499955001160666
+      training dummy sheet_38: 2265921525501801048
+      training dummy sheet_39: 5458355421012590903
+      training dummy sheet_4: -1436008675117537150
+      training dummy sheet_40: -8188943730032513186
+      training dummy sheet_41: -6083037052604419397
+      training dummy sheet_42: 8513999491158743701
+      training dummy sheet_43: 4668959674052235245
+      training dummy sheet_44: -5121372437565766846
+      training dummy sheet_45: -4763161894357964158
+      training dummy sheet_46: -1048330422682341071
+      training dummy sheet_47: -1406001761707743634
+      training dummy sheet_48: 5573577755444719817
+      training dummy sheet_49: 36025616602879497
+      training dummy sheet_5: 7351037496365574191
+      training dummy sheet_50: -126615992039028412
+      training dummy sheet_51: -937046263822636728
+      training dummy sheet_52: -410651104970508558
+      training dummy sheet_53: 438473192572649721
+      training dummy sheet_6: -6863541628071922105
+      training dummy sheet_7: -5856699949544478681
+      training dummy sheet_8: 6016640320727876923
+      training dummy sheet_9: 3611810349089133502
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

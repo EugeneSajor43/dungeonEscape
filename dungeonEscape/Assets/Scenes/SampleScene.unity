@@ -521,6 +521,7 @@ MonoBehaviour:
   _grassTile: {fileID: -750627606701587212, guid: 10b7f3a198b961041b4c4e16d6823537, type: 3}
   _mountainTile: {fileID: -5128559355391493039, guid: 0b081e75548c8394b8a8c8e3590753b0, type: 3}
   _cam: {fileID: 519420032}
+  limit: 9
 --- !u!4 &959863194
 Transform:
   m_ObjectHideFlags: 0

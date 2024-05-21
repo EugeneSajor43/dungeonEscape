@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
+
 public class UnitManager : MonoBehaviour {
     public static UnitManager Instance;
 
@@ -14,6 +15,8 @@ public class UnitManager : MonoBehaviour {
     public bool CanEscape = false;
     public int EscapeCount = 0;
     public int DeadHeroes = 0;
+
+    public bool valid_game;
 
     public BaseEnemy SelectedEnemy;
 
@@ -45,6 +48,7 @@ public class UnitManager : MonoBehaviour {
     public void SpawnEnemies()
     {
         var enemyCount = 1;
+        valid_game = true;
 
         for (int i = 0; i < enemyCount; i++)
         {
@@ -147,11 +151,95 @@ public class UnitManager : MonoBehaviour {
             print("Escaped");
             EscapeCount += 1;
             if (EscapeCount + DeadHeroes == 3) {
+<<<<<<< Updated upstream
+=======
+                GameManager.Instance.ChangeState(GameState.EnemiesTurn);
+            }
+        }
+
+        GameManager.Instance.ChangeState(GameState.EnemiesTurn);
+
+    }
+
+
+    public void HeroMove() {
+        if (SelectedEnemy != null) {
+            Invoke("HeroMove1", 0);
+        } else {
+            Invoke("HeroMove2", 0);
+        }
+    }
+
+    public void HeroMove1() { 
+        BaseUnit currentHero = SelectedHeroes[0];
+        if (currentHero != null && heroPath.Count > 0) {
+            BaseHero currentHeroBH = (BaseHero)currentHero;
+            currentHeroBH.transform.position = heroPath.Pop();
+            if (currentHeroBH.transform.position == SelectedEnemy.transform.position) {
+                GameManager.Instance.Astar_total_kills++;
+                Destroy(SelectedEnemy.gameObject);
+                UndoPath();
+                heroPathSet.Clear();
+                print("Hero1 killed enemy");
+                CanEscape = true;
+                SpawnExit();
+            }
+        }
+        GameManager.Instance.ChangeState(GameState.Heroes2Turn);
+    }
+
+    public void HeroMove2() { 
+        BaseUnit currentHero = SelectedHeroes[0];
+        if (currentHero != null && heroPath.Count > 0) {
+            BaseHero currentHeroBH = (BaseHero)currentHero;
+            currentHeroBH.transform.position = heroPath.Pop();
+            if (CanEscape && currentHeroBH.transform.position == EscapeExit) {
+                UndoPath();
+                Destroy(currentHeroBH.gameObject);
+                print("Escaped");
+                EscapeCount += 1;
+                if (EscapeCount + DeadHeroes == 3) {
+                    GameManager.Instance.ChangeState(GameState.Heroes2Turn);
+                }
+            } else {
+>>>>>>> Stashed changes
                 GameManager.Instance.ChangeState(GameState.Heroes2Turn);
             }
         }
 
+<<<<<<< Updated upstream
         if (currentTurn == 1) {
+=======
+    public void KillEnemy() {
+        if (SelectedEnemy != null) {
+            print("Player kills");
+            //GameManager.Instance.Astar_total_kills++;
+            Destroy(SelectedEnemy.gameObject);
+            heroPathSet.Clear();
+            CanEscape = true;
+            SpawnExit();
+        }
+    }
+
+    public bool ValidPath() {
+        Vector3 dummy_location = new Vector3(-1f, -1f, -1f);
+        Vector3 hero2_Location = (SelectedHeroes[1] != null) ? (SelectedHeroes[1].transform.position) : (dummy_location);
+        Vector3 hero3_Location = (SelectedHeroes[2] != null) ? (SelectedHeroes[2].transform.position) : (dummy_location);
+
+        if (heroPathSet.Count == 0 || heroPathSet.Contains(hero2_Location) || heroPathSet.Contains(hero3_Location) ) {
+            return false;
+        }
+
+        return true;
+    }
+
+    public void AStarSearch1() {
+        heroPath.Clear();
+
+        BaseUnit currentHero = SelectedHeroes[0];
+
+        if((GameManager.Instance.GameState != GameState.HeroesTurn) || (currentHero == null)) {
+>>>>>>> Stashed changes
             GameManager.Instance.ChangeState(GameState.Heroes2Turn);
         } 
         else if (currentTurn == 2) {
@@ -271,7 +359,133 @@ public class UnitManager : MonoBehaviour {
 
             Tile tile1 = GridManager.Instance.GetTileAtPosition(new Vector2(newX, newY));
             if (tile1.TileName != "Mountain") {
+<<<<<<< Updated upstream
                 goodExit = true;
+=======
+
+                if((newX == 0) && newY == 0)
+                {
+                    goodExit = false;
+                }
+                else if((newX == 0) && newY == 8)
+                {
+                    goodExit = false;
+                }
+                else if((newX == 15) && (newY == 0))
+                {
+                    goodExit = false;
+                }
+                else if((newX == 15) && (newY == 8))
+                {
+                    goodExit = false;
+                }                
+                else if(newX == 0)
+                {
+                    Tile tileA = GridManager.Instance.GetTileAtPosition(new Vector2(newX + 1, newY));
+                    Tile tileB = GridManager.Instance.GetTileAtPosition(new Vector2(newX, newY + 1));
+                    Tile tileC = GridManager.Instance.GetTileAtPosition(new Vector2(newX, newY - 1));
+                    if(tileA.TileName != "Mountain")
+                    {
+                        goodExit = true;
+                        tile1._isPortalSpawned = true;
+                        tile1.ColorPortal();                        
+                    }
+                    else if(tileB.TileName != "Mountain")
+                    {
+                        goodExit = true;
+                        tile1._isPortalSpawned = true;
+                        tile1.ColorPortal();                         
+                    }
+                    else if(tileB.TileName != "Mountain")
+                    {
+                        goodExit = true;
+                        tile1._isPortalSpawned = true;
+                        tile1.ColorPortal();                                                
+                    }                    
+                }
+                else if(newX == 15)
+                {
+                    Tile tileA = GridManager.Instance.GetTileAtPosition(new Vector2(newX - 1, newY));
+                    Tile tileB = GridManager.Instance.GetTileAtPosition(new Vector2(newX, newY + 1));
+                    Tile tileC = GridManager.Instance.GetTileAtPosition(new Vector2(newX, newY - 1));
+                    if(tileA.TileName != "Mountain")
+                    {
+                        goodExit = true;
+                        tile1._isPortalSpawned = true;
+                        tile1.ColorPortal();                        
+                    }
+                    else if(tileB.TileName != "Mountain")
+                    {
+                        goodExit = true;
+                        tile1._isPortalSpawned = true;
+                        tile1.ColorPortal();                         
+                    }
+                    else if(tileB.TileName != "Mountain")
+                    {
+                        goodExit = true;
+                        tile1._isPortalSpawned = true;
+                        tile1.ColorPortal();                                                
+                    }  
+                }
+                else if(newY == 0)
+                {
+                    Tile tileA = GridManager.Instance.GetTileAtPosition(new Vector2(newX + 1, newY));
+                    Tile tileB = GridManager.Instance.GetTileAtPosition(new Vector2(newX - 1, newY));
+                    Tile tileC = GridManager.Instance.GetTileAtPosition(new Vector2(newX, newY + 1));
+                    if(tileA.TileName != "Mountain")
+                    {
+                        goodExit = true;
+                        tile1._isPortalSpawned = true;
+                        tile1.ColorPortal();                        
+                    }
+                    else if(tileB.TileName != "Mountain")
+                    {
+                        goodExit = true;
+                        tile1._isPortalSpawned = true;
+                        tile1.ColorPortal();                         
+                    }
+                    else if(tileB.TileName != "Mountain")
+                    {
+                        goodExit = true;
+                        tile1._isPortalSpawned = true;
+                        tile1.ColorPortal();                                                
+                    }  
+                }        
+                else if(newY == 8)
+                {
+                    Tile tileA = GridManager.Instance.GetTileAtPosition(new Vector2(newX + 1, newY));
+                    Tile tileB = GridManager.Instance.GetTileAtPosition(new Vector2(newX - 1, newY));
+                    Tile tileC = GridManager.Instance.GetTileAtPosition(new Vector2(newX, newY - 1));
+                    if(tileA.TileName != "Mountain")
+                    {
+                        goodExit = true;
+                        tile1._isPortalSpawned = true;
+                        tile1.ColorPortal();                        
+                    }
+                    else if(tileB.TileName != "Mountain")
+                    {
+                        goodExit = true;
+                        tile1._isPortalSpawned = true;
+                        tile1.ColorPortal();                         
+                    }
+                    else if(tileB.TileName != "Mountain")
+                    {
+                        goodExit = true;
+                        tile1._isPortalSpawned = true;
+                        tile1.ColorPortal();                                                
+                    }  
+                }                        
+                
+                if (SelectedHeroes[0] != null && SelectedHeroes[0].transform.position == EscapeExit) {
+                    Destroy(SelectedHeroes[0].gameObject);
+                }
+                if (SelectedHeroes[1] != null && SelectedHeroes[1].transform.position == EscapeExit) {
+                    Destroy(SelectedHeroes[1].gameObject);
+                }
+                if (SelectedHeroes[2] != null && SelectedHeroes[2].transform.position == EscapeExit) {
+                    Destroy(SelectedHeroes[2].gameObject);
+                }
+>>>>>>> Stashed changes
             }
 
         }
@@ -327,34 +541,172 @@ public class UnitManager : MonoBehaviour {
                     }
                 }
             }    
+<<<<<<< Updated upstream
+=======
+        } */
+
+
+
+
+
+        Vector3 dummy_location = new Vector3(-1f, -1f, -1f);
+        Vector3 hero_Location = (SelectedHeroes[0] != null) ? (SelectedHeroes[0].transform.position) : (dummy_location);
+        Vector3 hero2_Location = (SelectedHeroes[1] != null) ? (SelectedHeroes[1].transform.position) : (dummy_location);
+        Vector3 hero3_Location = (SelectedHeroes[2] != null) ? (SelectedHeroes[2].transform.position) : (dummy_location);
+
+        if (hero_Location == dummy_location && hero2_Location == dummy_location && hero3_Location == dummy_location) 
+        {
+            GameManager.Instance.ChangeState(GameState.LostGame);
+        }
+
+        if(SelectedEnemy != null)
+        {
+
+        
+
+        float currentY = SelectedEnemy.transform.position.y;
+        float currentX = SelectedEnemy.transform.position.x;
+        //print($"{currentX}, {currentY}");
+        //print("MASK CALLED");
+
+        bool is_UP_valid = false;
+        bool is_DOWN_valid = false;
+        bool is_RIGHT_valid = false;
+        bool is_LEFT_valid = false;
+
+        float Y_up = currentY + 1f;
+        float Y_down = currentY - 1f;
+        float X_right = currentX + 1f;
+        float X_left = currentX - 1f;
+
+        Vector3 UP_pos = new Vector3(currentX, Y_up, 0f);
+        Vector3 DOWN_pos = new Vector3(currentX, Y_down, 0f);
+        Vector3 RIGHT_pos = new Vector3(X_right, currentY, 0f);
+        Vector3 LEFT_pos = new Vector3(X_left, currentY, 0f);
+
+        if((Y_up <= 8) && (Y_up >= 0))
+        {
+            if(GridManager.Instance.GetTileAtPosition(new Vector2((int)currentX, (int)Y_up))._isWalkable)
+            {
+                is_UP_valid = true;
+            }
+        }
+        if((Y_down <= 8) && (Y_down >= 0))
+        {
+            if(GridManager.Instance.GetTileAtPosition(new Vector2((int)currentX, (int)Y_down))._isWalkable)
+            {
+                is_DOWN_valid = true;
+            }
+        }
+        if((X_right <= 15) && (X_right >= 0))
+        {
+            if(GridManager.Instance.GetTileAtPosition(new Vector2((int)X_right, (int)currentY))._isWalkable)
+            {
+                is_RIGHT_valid = true;
+            }
+        }
+        if((X_left <= 15) && (X_left >= 0))
+        {
+            if(GridManager.Instance.GetTileAtPosition(new Vector2((int)X_left, (int)currentY))._isWalkable)
+            {
+                is_LEFT_valid = true;
+            }
+        }
+
+        var random = new System.Random();
+        bool made_move = false;
+
+        while(!made_move)
+        {
+            int direction = random.Next(0, 4);
+
+            if((direction == 0) && (is_UP_valid))
+            {
+                SelectedEnemy.transform.position += new Vector3(0f, 1f, 0f);
+                made_move = true;
+            }
+            if((direction == 1) && (is_DOWN_valid))
+            {
+                SelectedEnemy.transform.position += new Vector3(0f, -1f, 0f);
+                made_move = true;
+            }
+            if((direction == 2) && (is_RIGHT_valid))
+            {
+                SelectedEnemy.transform.position += new Vector3(1f, 0f, 0f);
+                made_move = true;
+            }
+            if((direction == 3) && (is_LEFT_valid))
+            {
+                SelectedEnemy.transform.position += new Vector3(-1f, 0f, 0f);
+                made_move = true;
+            }
+            if((!is_UP_valid) && (!is_DOWN_valid) && (!is_RIGHT_valid) &&(!is_LEFT_valid))
+            {
+                valid_game = false;
+                SelectedEnemy.transform.position = SelectedEnemy.transform.position;
+                made_move = true;
+            }
+        }
+
+>>>>>>> Stashed changes
         }
 
         if (SelectedEnemy != null) {
             if (SelectedEnemy.transform.position == hero_Location) {
                 print("Enemy kills");
                 Destroy(SelectedHeroes[0].gameObject);
+                GameManager.Instance.Astar_total_deaths+= 1;
                 DeadHeroes += 1;
-                print(SelectedHeroes[0]);
+                //print(SelectedHeroes[0]);
             } 
             else if (SelectedEnemy.transform.position == hero2_Location) {
                 print("Enemy kills");
                 Destroy(SelectedHeroes[1].gameObject);
+                GameManager.Instance.Minimax_total_deaths+= 1;
                 DeadHeroes += 1;
-                print(SelectedHeroes[1]);
+                //print(SelectedHeroes[1]);
             } 
             else if (SelectedEnemy.transform.position == hero3_Location) {
                 print("Enemy kills");
                 Destroy(SelectedHeroes[2].gameObject);
+                GameManager.Instance.RL_total_deaths+= 1;
                 DeadHeroes += 1;
-                print(SelectedHeroes[2]);
+                //print(SelectedHeroes[2]);
             } 
         }
 
         //SelectedEnemy.OccupiedTile = this;
+<<<<<<< Updated upstream
         GameManager.Instance.ChangeState(GameState.HeroesTurn);
+=======
+     
+        if(UnitManager.Instance.SelectedHeroes[0] != null)
+        {
+            GameManager.Instance.ChangeState(GameState.HeroesTurn);
+        }
+        else if(UnitManager.Instance.SelectedHeroes[1] != null)
+        {
+            GameManager.Instance.ChangeState(GameState.Heroes2Turn);
+        }
+        else if(UnitManager.Instance.SelectedHeroes[2] != null)
+        {
+            GameManager.Instance.ChangeState(GameState.Heroes2Turn);
+        }
+
+>>>>>>> Stashed changes
     }
 
     public void ResetGame() {
+
+
+        if(EscapeCount == 3){
+            GameManager.Instance.win++;
+        }
+        else
+        {
+            GameManager.Instance.loss++;
+        }
+
         if (SelectedHeroes[0] != null) {
             Destroy(SelectedHeroes[0].gameObject);
         } 
@@ -367,10 +719,19 @@ public class UnitManager : MonoBehaviour {
 
         if (SelectedEnemy != null) {
             Destroy(SelectedEnemy.gameObject);        
+        }
+
+        if (portal != null) {
+            Destroy(portal.gameObject);        
         } 
         EscapeExit = new Vector3(-1f, -1f, -1f);
         EscapeCount = 0;
         DeadHeroes = 0;
         CanEscape = false;
+<<<<<<< Updated upstream
+=======
+        GameManager.Instance.WriteCSV();
+        SceneManager.LoadScene("Scenes/SampleScene");
+>>>>>>> Stashed changes
     }
 }
