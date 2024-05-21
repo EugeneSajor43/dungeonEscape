@@ -115,7 +115,7 @@ Install Unity using Version 2023.2.17f1
 1. Locate the Snorelax2 prefab in **Prefabs -> Units -> Heroes**.
 2. Set the slider to **5**.
                                 
-###Locations of Algorithms:
+### Locations of Algorithms:
 1. Anthony:
   - MonteCarloSearch, A* Algorithms are in **Assets -> _scripts -> AO Algo**
 2. Fourcan: 
