@@ -7,8 +7,6 @@ Install Unity using Version 2023.2.17f1
 
 # Project Setup Instructions
 
-Follow these steps to set up the project:
-
 ## 1. Create a new 2D project
 
 ## 2. Install NuGetForUnity package
