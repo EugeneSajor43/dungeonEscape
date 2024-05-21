@@ -121,6 +121,7 @@ Install Unity using Version 2023.2.17f1
 2. Fourcan: 
   - A*, Hero Nash + Minimax, Enemy Minimax Algorithms are in **Assets -> _Scripts -> Units**
 3. Eugene:
+  - ML implementation is in **Assets -> _Scripts -> Units -> Heroes**
 
 
 By Anthony Williams, Fourcan Adullah, and Eugene Sajor
