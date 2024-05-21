@@ -1,4 +1,4 @@
-# dungeonEscape
+# Dungeon Escape
  76100 Final Project: Dungeon Escape Game in Unity 2023.2.17f1
 
 Using Minimax, Nash, A*, MonteCarlo Search, and ML to control agents in a dungeon environment to kill the dragon and find the exit.
@@ -41,6 +41,96 @@ Install Unity using Version 2023.2.17f1
 ## 6. Set the slider in Snorelax2 prefab
 1. Locate the Snorelax2 prefab in **Prefabs -> Units -> Heroes**.
 2. Set the slider to **5**.
+
+## Overview
+
+**Dungeon Escape** is an immersive AI-driven Unity game where multiple knight agents attempt to escape a dungeon while being pursued by a formidable dragon. Each knight must acquire a key to unlock the dungeon door leading to their freedom. The game showcases various AI strategies, with each knight agent implementing different AI techniques: Reinforcement Learning, Nash Equilibrium, Minimax, Monte Carlo Search, and A*. The dragon, controlled by its own AI, aims to thwart the knights' escape.
+
+## Goals
+
+- **Escape the Dungeon:** The primary objective for each knight agent is to escape the dungeon by acquiring a key and unlocking the exit door.
+- **Avoid or Defeat the Dragon:** Knights can choose to defeat the dragon to make their escape easier or avoid it entirely.
+- 
+## Team Member Roles
+
+### Anthony Williams
+- **Agent Development:**
+  - A* Algorithm
+  - Monte Carlo Search Trees
+- **Heuristic-Based Simulations:**
+  - Implement heuristics to guide simulations and improve decision-making.
+- **Decision Making/Machine Learning:**
+  - Integrate machine learning techniques for agent decision-making.
+- **Unity Environment:**
+  - Build and design the game environment within Unity.
+- **Trials:**
+  - Conduct trials to test agent performance.
+- **Visualization Metrics:**
+  - Create visual representations of performance metrics.
+
+### Fourcan Abdullah
+- **Adversarial Search Development:**
+  - Implement Minimax algorithm for knight agents.
+  - Develop collaboration agent using Nash Equilibrium.
+- **Dragon AI:**
+  - Implement Minimax algorithm for the dragon agent.
+- **Pathfinding:**
+  - Use A* algorithm for agents to find and exit the portal.
+- **Unity Environment:**
+  - Assist in building and designing the game environment.
+- **Heuristic Search:**
+  - Integrate heuristic search methods for enhanced decision-making.
+- **Visualization Metrics:**
+  - Develop visualizations to represent performance data.
+
+### Eugene Sajor
+- **Reinforcement Learning Agent:**
+  - Develop a deep reinforcement learning agent for knight behavior.
+- **Unity Environment:**
+  - Contribute to the construction and design of the game environment.
+- **Training and Trials:**
+  - Run training sessions and trials to refine agent behavior.
+- **Evaluation Metrics:**
+  - Create and implement metrics to evaluate agent performance.
+- **Visualization Metrics:**
+  - Design visual tools to showcase evaluation metrics.
+
+## Game Mechanics
+
+1. **Knights and Dragon:**
+   - Each knight agent has a unique AI strategy.
+   - The dragon agent operates to prevent knights from escaping.
+2. **Objective:**
+   - Knights must find a key to unlock the exit door and escape.
+3. **Strategies:**
+   - Knights may collaborate, defeat the dragon, or avoid it.
+4. **Environment:**
+   - A dungeon environment designed in Unity.
+
+## AI Techniques
+
+- **A* Algorithm:** Pathfinding and shortest path calculation for knights.
+- **Monte Carlo Search Trees:** Simulation-based decision-making for knights.
+- **Minimax Algorithm:** Adversarial strategy for knights and dragon.
+- **Nash Equilibrium:** Collaborative strategy for knights.
+- **Reinforcement Learning:** Adaptive learning and behavior modeling for knights.
+
+## Development Tools
+
+- **Unity:** Game development and environment design.
+- **Machine Learning Libraries:** For implementing AI strategies.
+- **Visualization Tools:** For creating metrics and performance graphs.
+
+## Running the Game
+
+1. **Setup:** Open the project in Unity.
+2. **Configuration:** Ensure all AI scripts are correctly assigned to the knight and dragon agents.
+3. **Execution:** Run the game to observe knight agents attempting to escape the dungeon.
+4. **Analysis:** Use visualization metrics to evaluate agent performance.
+
+## Contact Information
+
+For any questions or further information, please reach out to the respective team members via their provided contact details within the project documentation.
 
 
                                 
